@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnqna0thxewmx"]
+
+[ext_resource type="Theme" uid="uid://qnq4w5jog8yx" path="res://main_theme.tres" id="1_758ep"]
+[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://icon.svg" id="1_kp46k"]
+[ext_resource type="Shader" uid="uid://c5ljfsspsuxke" path="res://dialogue.gdshader" id="2_hoxo3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2h7b"]
+shader = ExtResource("2_hoxo3")
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_758ep")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_q2h7b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Body" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 211.0
+offset_right = -89.0
+offset_bottom = -1.0
+texture = ExtResource("1_kp46k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0400001
+offset_left = -5.0
+offset_top = 258.5
+offset_right = -59.0
+offset_bottom = -284.42004
+grow_horizontal = 2
+grow_vertical = 2
+text = "OHME GOSHHH
+"
+fit_content = true
+
+[node name="NextButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next"
