@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnf5s14ykfm77"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlq6p"]
+bg_color = Color(0.8039216, 0.654902, 0.06666667, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.84300005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 289.0
+offset_top = -0.2640381
+offset_right = -287.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_xlq6p")
+value = 30.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.832
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = -0.13598633
+offset_right = -255.0
+offset_bottom = -59.0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
