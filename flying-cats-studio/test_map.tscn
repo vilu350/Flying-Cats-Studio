@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=4 format=3 uid="uid://3mubng0v8qua"]
 
-[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://Player.tscn" id="1_4wuf8"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://player.tscn" id="1_4wuf8"]
 [ext_resource type="PackedScene" uid="uid://ulvpmos54la4" path="res://obstacle.tscn" id="2_s02eq"]
+[ext_resource type="PackedScene" uid="uid://bfh2r6snhtqj8" path="res://enemy.tscn" id="3_s02eq"]
 
 [node name="TestMap" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(290, 256)
 
 [node name="Obstacle" parent="." instance=ExtResource("2_s02eq")]
 position = Vector2(578, 358)
+
+[node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
+position = Vector2(932, 545)
