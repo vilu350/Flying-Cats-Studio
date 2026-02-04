@@ -1,19 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnqna0thxewmx"]
+[gd_scene load_steps=8 format=3 uid="uid://cnqna0thxewmx"]
 
 [ext_resource type="Theme" uid="uid://qnq4w5jog8yx" path="res://main_theme.tres" id="1_758ep"]
 [ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://icon.svg" id="1_kp46k"]
 [ext_resource type="Shader" uid="uid://c5ljfsspsuxke" path="res://dialogue.gdshader" id="2_hoxo3"]
+[ext_resource type="Script" uid="uid://behxd1ns42s4u" path="res://dialogue.gd" id="2_q2h7b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q2h7b"]
 shader = ExtResource("2_hoxo3")
 
+[sub_resource type="InputEventAction" id="InputEventAction_hoxo3"]
+
+[sub_resource type="Shortcut" id="Shortcut_q2h7b"]
+events = [SubResource("InputEventAction_hoxo3")]
+
 [node name="Dialogue" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_758ep")
+script = ExtResource("2_q2h7b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_q2h7b")
@@ -66,4 +74,5 @@ offset_left = -45.0
 offset_top = -31.0
 grow_horizontal = 0
 grow_vertical = 0
+shortcut = SubResource("Shortcut_q2h7b")
 text = "Next"
