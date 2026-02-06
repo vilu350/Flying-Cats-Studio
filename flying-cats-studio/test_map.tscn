@@ -1,12 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=5 format=3 uid="uid://3mubng0v8qua"]
 
-[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://Player.tscn" id="1_4wuf8"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://player.tscn" id="1_4wuf8"]
+[ext_resource type="Script" uid="uid://blri83oejwai4" path="res://test_map.gd" id="1_t8dge"]
 [ext_resource type="PackedScene" uid="uid://ulvpmos54la4" path="res://obstacle.tscn" id="2_s02eq"]
+[ext_resource type="PackedScene" uid="uid://bfh2r6snhtqj8" path="res://enemy.tscn" id="3_s02eq"]
 
 [node name="TestMap" type="Node2D"]
+script = ExtResource("1_t8dge")
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
+unique_name_in_owner = true
 position = Vector2(290, 256)
 
-[node name="Obstacle" parent="." instance=ExtResource("2_s02eq")]
+[node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
+unique_name_in_owner = true
+position = Vector2(1983, 1137)
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("2_s02eq")]
 position = Vector2(578, 358)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(920, 200)
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(459, 708)
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(1223, 486)
+
+[node name="Obstacle5" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(1706, 408)
+
+[node name="Obstacle6" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(1418, 941)
+
+[node name="Obstacle7" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(910, 1076)
+
+[node name="Obstacle8" parent="Obstacles" instance=ExtResource("2_s02eq")]
+position = Vector2(2163, 710)
