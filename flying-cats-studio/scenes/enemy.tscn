@@ -21,6 +21,7 @@ texture = ExtResource("2_qi2p4")
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_4gyqm")
