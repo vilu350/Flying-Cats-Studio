@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://3mubng0v8qua"]
 
-[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
 [ext_resource type="PackedScene" uid="uid://ulvpmos54la4" path="res://scenes/obstacle.tscn" id="2_s02eq"]
 [ext_resource type="PackedScene" uid="uid://bfh2r6snhtqj8" path="res://scenes/enemy.tscn" id="3_s02eq"]
@@ -43,19 +43,19 @@ position = Vector2(910, 1076)
 [node name="Obstacle8" parent="Obstacles" instance=ExtResource("2_s02eq")]
 position = Vector2(2163, 710)
 
-[node name="Collectatbles" type="Node" parent="."]
+[node name="Collectables" type="Node" parent="."]
 
-[node name="Collectable" parent="Collectatbles" instance=ExtResource("5_bdpbv")]
+[node name="Collectable" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(420, 951)
 
-[node name="Collectable2" parent="Collectatbles" instance=ExtResource("5_bdpbv")]
+[node name="Collectable2" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(776, 775)
 
-[node name="Collectable3" parent="Collectatbles" instance=ExtResource("5_bdpbv")]
+[node name="Collectable3" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(868, 1411)
 
-[node name="Collectable4" parent="Collectatbles" instance=ExtResource("5_bdpbv")]
+[node name="Collectable4" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(1524, 683)
 
-[node name="Collectable5" parent="Collectatbles" instance=ExtResource("5_bdpbv")]
+[node name="Collectable5" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(1438, 1373)
