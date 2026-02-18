@@ -50,6 +50,7 @@ metadata/_custom_type_script = "uid://dnx7jmorrfvun"
 script = ExtResource("4_iq77p")
 text = "6:00 pm"
 target_line_idx = 3
+is_quit = true
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_85mp7"]
@@ -84,7 +85,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_758ep")
 script = ExtResource("2_q2h7b")
-dialogue_items = Array[Object]([SubResource("Resource_xvgdd"), SubResource("Resource_cd3gt"), SubResource("Resource_x4m5d")])
+dialogue_items = Array[ExtResource("5_iqg0b")]([SubResource("Resource_xvgdd"), SubResource("Resource_cd3gt"), SubResource("Resource_x4m5d")])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_q2h7b")
