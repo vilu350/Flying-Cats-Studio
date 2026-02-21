@@ -1,74 +1,74 @@
 [gd_scene load_steps=20 format=3 uid="uid://cnqna0thxewmx"]
 
-[ext_resource type="Theme" uid="uid://qnq4w5jog8yx" path="res://main_theme.tres" id="1_758ep"]
-[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://icon.svg" id="1_kp46k"]
-[ext_resource type="Shader" uid="uid://c5ljfsspsuxke" path="res://dialogue.gdshader" id="2_hoxo3"]
-[ext_resource type="Script" uid="uid://behxd1ns42s4u" path="res://dialogue.gd" id="2_q2h7b"]
-[ext_resource type="Script" uid="uid://bc2b0wh4es4dq" path="res://dialogue_choice.gd" id="4_iq77p"]
-[ext_resource type="Script" uid="uid://dnx7jmorrfvun" path="res://dialogue_item.gd" id="5_iqg0b"]
-[ext_resource type="Texture2D" uid="uid://dtshuteuxk4i8" path="res://icon2.0.svg" id="6_iqg0b"]
+[ext_resource type="Theme" uid="uid://qnq4w5jog8yx" path="res://main_theme.tres" id="1_x1cjp"]
+[ext_resource type="Script" uid="uid://behxd1ns42s4u" path="res://scripts/dialogue.gd" id="2_tp716"]
+[ext_resource type="Script" uid="uid://dnx7jmorrfvun" path="res://scripts/dialogue_item.gd" id="3_03vpb"]
+[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://sprites/icon.svg" id="4_ccu7b"]
+[ext_resource type="Script" uid="uid://bc2b0wh4es4dq" path="res://scripts/dialogue_choice.gd" id="5_6xhvj"]
+[ext_resource type="Texture2D" uid="uid://dtshuteuxk4i8" path="res://icon2.0.svg" id="6_sv5jy"]
+[ext_resource type="Shader" uid="uid://c5ljfsspsuxke" path="res://dialogue.gdshader" id="7_ocawk"]
 
 [sub_resource type="Resource" id="Resource_iq77p"]
-script = ExtResource("4_iq77p")
+script = ExtResource("5_6xhvj")
 text = "Yes!"
 target_line_idx = 1
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_iqg0b"]
-script = ExtResource("4_iq77p")
+script = ExtResource("5_6xhvj")
 text = "No :("
 is_quit = true
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_xvgdd"]
-script = ExtResource("5_iqg0b")
-choices = Array[ExtResource("4_iq77p")]([SubResource("Resource_iq77p"), SubResource("Resource_iqg0b")])
-character = ExtResource("1_kp46k")
+script = ExtResource("3_03vpb")
+choices = Array[ExtResource("5_6xhvj")]([SubResource("Resource_iq77p"), SubResource("Resource_iqg0b")])
+character = ExtResource("4_ccu7b")
 text = "Hello! Do you like Godot?"
 metadata/_custom_type_script = "uid://dnx7jmorrfvun"
 
 [sub_resource type="Resource" id="Resource_ajmj3"]
-script = ExtResource("4_iq77p")
+script = ExtResource("5_6xhvj")
 text = "Yes!"
 target_line_idx = 2
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_mblti"]
-script = ExtResource("4_iq77p")
+script = ExtResource("5_6xhvj")
 text = "Ew NO!"
 is_quit = true
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_cd3gt"]
-script = ExtResource("5_iqg0b")
-choices = Array[ExtResource("4_iq77p")]([SubResource("Resource_ajmj3"), SubResource("Resource_mblti")])
-character = ExtResource("6_iqg0b")
+script = ExtResource("3_03vpb")
+choices = Array[ExtResource("5_6xhvj")]([SubResource("Resource_ajmj3"), SubResource("Resource_mblti")])
+character = ExtResource("6_sv5jy")
 text = "Can I come over?"
 metadata/_custom_type_script = "uid://dnx7jmorrfvun"
 
 [sub_resource type="Resource" id="Resource_1lttb"]
-script = ExtResource("4_iq77p")
+script = ExtResource("5_6xhvj")
 text = "6:00 pm"
 target_line_idx = 3
 is_quit = true
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_85mp7"]
-script = ExtResource("4_iq77p")
+script = ExtResource("5_6xhvj")
 text = "erm I changed my mind!"
 is_quit = true
 metadata/_custom_type_script = "uid://bc2b0wh4es4dq"
 
 [sub_resource type="Resource" id="Resource_x4m5d"]
-script = ExtResource("5_iqg0b")
-choices = Array[ExtResource("4_iq77p")]([SubResource("Resource_1lttb"), SubResource("Resource_85mp7")])
-character = ExtResource("1_kp46k")
+script = ExtResource("3_03vpb")
+choices = Array[ExtResource("5_6xhvj")]([SubResource("Resource_1lttb"), SubResource("Resource_85mp7")])
+character = ExtResource("4_ccu7b")
 text = "what time?
 "
 metadata/_custom_type_script = "uid://dnx7jmorrfvun"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q2h7b"]
-shader = ExtResource("2_hoxo3")
+shader = ExtResource("7_ocawk")
 
 [sub_resource type="InputEventAction" id="InputEventAction_hoxo3"]
 action = &"advance_text"
@@ -83,9 +83,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_758ep")
-script = ExtResource("2_q2h7b")
-dialogue_items = Array[ExtResource("5_iqg0b")]([SubResource("Resource_xvgdd"), SubResource("Resource_cd3gt"), SubResource("Resource_x4m5d")])
+theme = ExtResource("1_x1cjp")
+script = ExtResource("2_tp716")
+dialogue_items = Array[ExtResource("3_03vpb")]([SubResource("Resource_xvgdd"), SubResource("Resource_cd3gt"), SubResource("Resource_x4m5d")])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_q2h7b")
@@ -106,7 +106,7 @@ offset_left = 16.0
 offset_top = 211.0
 offset_right = -89.0
 offset_bottom = -1.0
-texture = ExtResource("1_kp46k")
+texture = ExtResource("4_ccu7b")
 expand_mode = 1
 stretch_mode = 5
 

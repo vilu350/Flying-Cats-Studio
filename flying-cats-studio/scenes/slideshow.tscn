@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dvkkjuy6sir6c"]
 
 [ext_resource type="Theme" uid="uid://qnq4w5jog8yx" path="res://main_theme.tres" id="1_c0x0y"]
-[ext_resource type="Script" uid="uid://coppbwcbvnn0q" path="res://slideshow.gd" id="2_c0x0y"]
+[ext_resource type="Script" uid="uid://coppbwcbvnn0q" path="res://scripts/slideshow.gd" id="2_c0x0y"]
 [ext_resource type="Shader" uid="uid://c5ljfsspsuxke" path="res://dialogue.gdshader" id="3_6822q"]
-[ext_resource type="Script" uid="uid://dlbrjd2xe14x8" path="res://slideshow_entry.gd" id="3_oc8sf"]
-[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://icon.svg" id="4_oc8sf"]
+[ext_resource type="Script" uid="uid://dlbrjd2xe14x8" path="res://scripts/slideshow_entry.gd" id="3_oc8sf"]
+[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://sprites/icon.svg" id="4_oc8sf"]
 [ext_resource type="Texture2D" uid="uid://dtshuteuxk4i8" path="res://icon2.0.svg" id="5_gnnch"]
 
 [sub_resource type="Resource" id="Resource_5o08k"]
