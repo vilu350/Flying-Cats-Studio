@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1t6si62j10ms"]
+
+[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://sprites/icon.svg" id="1_80edf"]
+
+[node name="GUI" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Bars" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Bars" type="HBoxContainer" parent="HBoxContainer/Bars"]
+layout_mode = 2
+
+[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/Bars"]
+layout_mode = 2
+
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/Bars/Count"]
+layout_mode = 2
+texture = ExtResource("1_80edf")
+
+[node name="Tile" type="TextureRect" parent="HBoxContainer/Bars/Bars/Count"]
+layout_mode = 2
+
+[node name="Number" type="Label" parent="HBoxContainer/Bars/Bars/Count"]
+layout_mode = 2
+
+[node name="Counters" type="HBoxContainer" parent="HBoxContainer/Bars/Bars"]
+layout_mode = 2
