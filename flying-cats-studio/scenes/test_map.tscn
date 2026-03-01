@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=7 format=3 uid="uid://3mubng0v8qua"]
 
-[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/player.tscn" id="1_4wuf8"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
 [ext_resource type="PackedScene" uid="uid://ulvpmos54la4" path="res://scenes/obstacle.tscn" id="2_s02eq"]
 [ext_resource type="PackedScene" uid="uid://bfh2r6snhtqj8" path="res://scenes/enemy.tscn" id="3_s02eq"]
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
+[ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -59,3 +60,7 @@ position = Vector2(1524, 683)
 
 [node name="Collectable5" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(1438, 1373)
+
+[node name="ProgressBar" parent="." instance=ExtResource("6_ss0f2")]
+offset_right = 82.0
+value = 100.0
