@@ -24,25 +24,26 @@ var isHurt: bool = false
 var isAttacking: bool = false
 
 func _ready():
-	effects.play("RESET")
+	#effects.play("RESET")
+	pass
 	
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection*speed
 	
-	if Input.is_action_just_pressed("attack"):
-		attack()
+	#if Input.is_action_just_pressed("attack"):
+		#attack()
 		
-func attack():
-	animations.play("attack" + lastAnimDirection)
-	isAttacking = true
-	weapon.enable()
-	await animations.animation_finished
-	weapon.disable()
-	isAttacking = false		
+#func attack():
+	#animations.play("attack" + lastAnimDirection)
+	#isAttacking = true
+	#weapon.enable()
+	#await animations.animation_finished
+	#weapon.disable()
+	#isAttacking = false		
 			
 func updateAnimation():
-	if isAttacking: return
+	#if isAttacking: return
 	
 	if velocity.length() == 0:
 		if animations.is_playing():

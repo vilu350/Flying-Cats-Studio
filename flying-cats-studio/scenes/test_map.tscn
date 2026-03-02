@@ -61,6 +61,7 @@ position = Vector2(1524, 683)
 [node name="Collectable5" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(1438, 1373)
 
-[node name="ProgressBar" parent="." instance=ExtResource("6_ss0f2")]
+[node name="ProgressBar" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ss0f2")]
 offset_right = 82.0
 value = 100.0
+player = NodePath("../Player")
