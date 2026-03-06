@@ -61,7 +61,12 @@ position = Vector2(1524, 683)
 [node name="Collectable5" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(1438, 1373)
 
-[node name="ProgressBar" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ss0f2")]
-offset_right = 82.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("6_ss0f2")]
+offset_left = 28.0
+offset_top = 13.0
+offset_right = 363.0
+offset_bottom = 72.0
 value = 100.0
-player = NodePath("../Player")
+player = NodePath("../../Player")
