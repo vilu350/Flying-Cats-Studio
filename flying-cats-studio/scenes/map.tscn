@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5tkmdd1omxhy" path="res://Assets/1-Bit-Sci-Fi(Omniclause)/Tileset.png" id="1_4xfga"]
 [ext_resource type="Texture2D" uid="uid://cvr3k27ctb4mb" path="res://Assets/1-Bit-Sci-Fi(Omniclause)/Props.png" id="2_paxxb"]
-[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/player.tscn" id="3_gldc4"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="3_gldc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -306,4 +306,4 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAFAAIAAAD+/wAAAAAFAAIAAAD//wAAAAAFAAI
 tile_set = SubResource("TileSet_gldc4")
 
 [node name="Player" parent="." instance=ExtResource("3_gldc4")]
-position = Vector2(0, -18)
+position = Vector2(0, -19)
