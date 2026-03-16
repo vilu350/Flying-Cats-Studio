@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var max_speed := 1000.0
 @export var acceleration := 1100.0
 @export var deceleration := 900.0
+@export var loot_scene: PackedScene
 
 func _physics_process(delta: float) -> void:
 	var direction := global_position.direction_to(get_global_player_position())
@@ -16,3 +17,13 @@ func _physics_process(delta: float) -> void:
 
 func get_global_player_position() -> Vector2:
 	return get_tree().root.get_node("TestMap/Player").global_position
+
+func take_damage():
+	# Spawn the gem
+	var new_gem = loot_scene.instantiate()
+	new_gem.global_position = global_position
+	get_tree().current_scene.call_deferred("add_child", new_gem)
+	
+	# Die
+	queue_free()
+	
