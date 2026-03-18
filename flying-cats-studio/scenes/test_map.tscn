@@ -64,6 +64,7 @@ position = Vector2(1438, 1373)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("6_ss0f2")]
+self_modulate = Color(0.16666675, 1, 0, 1)
 offset_left = 28.0
 offset_top = 13.0
 offset_right = 363.0
