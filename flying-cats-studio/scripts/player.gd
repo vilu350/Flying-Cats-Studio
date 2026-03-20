@@ -14,9 +14,6 @@ signal healthChanged
 @onready var hurt_timer: Timer = $HurtTimer
 @onready var weapon: Sprite2D = $Weapon
 
-@onready var health_bar: ProgressBar = $"../CanvasLayer/HealthBar"
-@export var live_points : int = 30
-
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
 
@@ -26,18 +23,12 @@ var lastAnimDirection: String = "Down"
 var isHurt: bool = false
 var isAttacking: bool = false
 
-func _ready() -> void:
+
+
+func _ready():
 	#effects.play("RESET")
-	set_health()
-	
-func set_health() -> void:
-	health_bar.max_value = live_points
-	health_bar.value = live_points
-	
-func update_health(Amount : int) -> void:
-	live_points += Amount
-	health_bar.value = live_points
-	
+	pass
+		
 	
 func handleInput():
 	pass

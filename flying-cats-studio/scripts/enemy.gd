@@ -2,6 +2,9 @@ extends CharacterBody2D
 #left off at M9L13 half way down
 @onready var _hit_box: Area2D = %HitBox
 
+var health: float = 3.0
+
+
 @export var max_speed := 1000.0
 @export var acceleration := 1100.0
 @export var deceleration := 900.0
@@ -18,7 +21,13 @@ func _physics_process(delta: float) -> void:
 func get_global_player_position() -> Vector2:
 	return get_tree().root.get_node("TestMap/Player").global_position
 
-func take_damage():
+func take_damage(weapon_damage: float):
+	#$Sprite2D/AnimationPlayer.play("take_damage")
+	health -= weapon_damage
+	
+	if health <= 0.0:
+		queue_free()
+	
 	# Spawn the gem
 	var new_gem = loot_scene.instantiate()
 	new_gem.global_position = global_position
