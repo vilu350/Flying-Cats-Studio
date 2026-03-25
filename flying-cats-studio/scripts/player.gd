@@ -12,12 +12,19 @@ signal healthChanged
 @export var deceleration := 1100.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
-@onready var weapon: Sprite2D = $Weapon
+@onready var player_weapon: Sprite2D = $Sprite2D/PlayerWeapon
 
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
 
 @export var knockbackPower: int = 500
+var current_look_dir = "right"
+var can_Slash: bool = true
+@export var Left_Slash_time: float = 0.2
+@export var Right_Slash_time: float = 0.2
+@export var Left_Slash_Return_time: float = 0.5
+@export var Right_Slash_Return_time: float = 0.5
+@export var weapon_damage: float = 1.0
 
 var lastAnimDirection: String = "Down"
 var isHurt: bool = false
@@ -71,6 +78,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handleInput()
 	#updateAnimation()
+	if get_global_mouse_position().y > global_position.y:
+		$Sprite2D/PlayerWeapon.show_behind_parent = false
+		$Sprite2D.frame = 0
+	else:
+		$Sprite2D/PlayerWeapon.show_behind_parent = true
+		$Sprite2D.frame = 1
 	if !isHurt:
 		for area in hurt_box.get_overlapping_areas():
 			if area.name == "HitBox":
