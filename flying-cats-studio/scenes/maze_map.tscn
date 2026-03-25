@@ -359,7 +359,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0cso3")
 sources/1 = SubResource("TileSetAtlasSource_2klcf")
 
-[node name="Maze Map" type="Node2D"]
+[node name="MazeMap" type="Node2D"]
 
 [node name="MazeReference" type="Sprite2D" parent="."]
 visible = false
