@@ -12,7 +12,7 @@ signal healthChanged
 @export var deceleration := 1100.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
-@onready var player_weapon: Sprite2D = $Sprite2D/PlayerWeapon
+@onready var sword: Sprite2D = $Sprite2D/sword
 
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
@@ -29,7 +29,6 @@ var can_Slash: bool = true
 var lastAnimDirection: String = "Down"
 var isHurt: bool = false
 var isAttacking: bool = false
-
 
 
 func _ready():
@@ -88,6 +87,14 @@ func _physics_process(delta: float) -> void:
 		for area in hurt_box.get_overlapping_areas():
 			if area.name == "HitBox":
 				hurtByEnemy(area)
+
+	if Input.is_action_just_pressed("attack") and can_slash: 
+		$Sprite2D/sword/AnimationPlayer.speed_scale = $Sprite2D/sword/AnimationPlayer.get_animation("left_slash").length / left_slash_time
+		$Sprite2D/sword/AnimationPlayer.play("left_slash")
+		can_slash = false
+
+func spawn_slash():
+	pass
 
 func hurtByEnemy(area):
 	currentHealth -= 10
