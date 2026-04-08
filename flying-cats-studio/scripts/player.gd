@@ -85,14 +85,7 @@ func _physics_process(delta: float) -> void:
 		current_look_dir = "left"
 	elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
 		current_look_dir = "right"
-	
-	if get_global_mouse_position().y > global_position.y:
-		$Sprite2D/Sword.show_behind_parent = false
-
-		$Sprite2D.frame = 0
-	else:
-		$Sprite2D/Sword.show_behind_parent = true
-		$Sprite2D.frame = 1
+		
 	
 	if Input.is_action_pressed("attack") and can_slash:
 		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("slash").length / slash_time
