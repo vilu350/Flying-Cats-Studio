@@ -12,7 +12,7 @@ signal healthChanged
 @export var deceleration := 1100.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
-@onready var weapon: Sprite2D = $Weapon
+@onready var sword: Sprite2D = $Sword
 
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
@@ -36,9 +36,9 @@ func handleInput():
 #func attack():
 	#animations.play("attack" + lastAnimDirection)
 	#isAttacking = true
-	#weapon.enable()
+	#sword.enable()
 	#await animations.animation_finished
-	#weapon.disable()
+	#sword.disable()
 	#isAttacking = false		
 			
 #func updateAnimation():
