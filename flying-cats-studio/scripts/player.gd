@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 		for area in hurt_box.get_overlapping_areas():
 			if area.name == "HitBox":
 				hurtByEnemy(area)
-
+	
 func hurtByEnemy(area):
 	currentHealth -= 10
 	if currentHealth < 0:
