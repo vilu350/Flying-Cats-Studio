@@ -11,4 +11,6 @@ func connect_signals() -> void:
 func damage(body : Node2D) -> void:
 	if body is Enemy:
 		body.update_health(-1)
+
+
 		

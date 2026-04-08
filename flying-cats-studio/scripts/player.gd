@@ -51,6 +51,8 @@ func attack():
 func updateAnimation():
 	if isAttacking: return
 	
+	
+	
 	#if velocity.length() == 0:
 		#if animations.is_playing():
 			#animations.stop()
@@ -86,6 +88,7 @@ func _physics_process(delta: float) -> void:
 	
 	if get_global_mouse_position().y > global_position.y:
 		$Sprite2D/Sword.show_behind_parent = false
+
 		$Sprite2D.frame = 0
 	else:
 		$Sprite2D/Sword.show_behind_parent = true
