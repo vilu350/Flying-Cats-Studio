@@ -1,6 +1,13 @@
 extends CharacterBody2D
+
+class_name Enemy
+signal healthChanged
 #left off at M9L13 half way down
 @onready var _hit_box: Area2D = %HitBox
+
+@export var maxHealth = 30
+@onready var currentHealth: int = maxHealth
+
 
 @export var max_speed := 1000.0
 @export var acceleration := 1100.0
@@ -32,4 +39,7 @@ func take_damage(weapon_damage: float):
 	
 	# Die
 	queue_free()
+	
+func update_health(amount):
+	currentHealth -= amount
 	

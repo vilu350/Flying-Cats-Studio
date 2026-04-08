@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://c3nnv308fvv7f"]
+[gd_scene load_steps=3 format=3 uid="uid://c3nnv308fvv7f"]
+
+[ext_resource type="Texture2D" uid="uid://cgp5inhsrsg46" path="res://sprites/Weapons Asset 16x16/Weapons Asset 16x16/002.png" id="1_rb3f2"]
+[ext_resource type="Script" uid="uid://b06na2eywhrch" path="res://scenes/sword.gd" id="2_sh16x"]
 
 [node name="Sword" type="Sprite2D"]
+texture = ExtResource("1_rb3f2")
+offset = Vector2(8, -8)
+script = ExtResource("2_sh16x")
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(8, -8)
+polygon = PackedVector2Array(-3, 0, 0, 3, 7, -4, 7, -7, 4, -7)

@@ -12,10 +12,17 @@ signal healthChanged
 @export var deceleration := 1100.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
-@onready var sword: Sprite2D = $Sword
+@onready var sword: Sprite2D = $Sprite2D/Sword
 
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
+
+var current_look_dir = "left"
+
+var can_slash: bool = true
+@export var slash_time: float = 0.2
+@export var sword_return_time: float = 0.5
+@export var weapon_damage: float = 50.0
 
 @export var knockbackPower: int = 500
 
@@ -33,16 +40,16 @@ func handleInput():
 	#if Input.is_action_just_pressed("attack"):
 		#attack()
 		
-#func attack():
-	#animations.play("attack" + lastAnimDirection)
-	#isAttacking = true
-	#sword.enable()
-	#await animations.animation_finished
-	#sword.disable()
-	#isAttacking = false		
+func attack():
+	animations.play("attack" + lastAnimDirection)
+	isAttacking = true
+	sword.enable()
+	await animations.animation_finished
+	sword.disable()
+	isAttacking = false		
 			
-#func updateAnimation():
-	#if isAttacking: return
+func updateAnimation():
+	if isAttacking: return
 	
 	#if velocity.length() == 0:
 		#if animations.is_playing():
@@ -72,6 +79,25 @@ func _physics_process(delta: float) -> void:
 		for area in hurt_box.get_overlapping_areas():
 			if area.name == "HitBox":
 				hurtByEnemy(area)
+	if current_look_dir == "right" and get_global_mouse_position().x < global_position.x:
+		current_look_dir = "left"
+	elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
+		current_look_dir = "right"
+	
+	if get_global_mouse_position().y > global_position.y:
+		$Sprite2D/Sword.show_behind_parent = false
+		$Sprite2D.frame = 0
+	else:
+		$Sprite2D/Sword.show_behind_parent = true
+		$Sprite2D.frame = 1
+	
+	if Input.is_action_pressed("attack") and can_slash:
+		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("slash").length / slash_time
+		$Sprite2D/Sword/AnimationPlayer.play("slash")
+		can_slash = false
+	
+func spawn_slash():
+	pass
 	
 func hurtByEnemy(area):
 	currentHealth -= 10
@@ -93,4 +119,10 @@ func knockback(enemyVelocity: Vector2):
 	velocity = knockbackDirection
 	move_and_slide()
 	
-	
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "slash":
+		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("sword_return").length / sword_return_time
+		$Sprite2D/Sword/AnimationPlayer.play("sword_return")
+	else:
+		can_slash = true

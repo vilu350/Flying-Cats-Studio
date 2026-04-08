@@ -6,8 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
 radius = 62.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
-radius = 71.00704
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(128, 118)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
@@ -25,4 +25,4 @@ collision_layer = 3
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("CircleShape2D_4gyqm")
+shape = SubResource("RectangleShape2D_md0e3")
