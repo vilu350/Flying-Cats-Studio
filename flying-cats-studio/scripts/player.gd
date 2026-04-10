@@ -12,7 +12,7 @@ signal healthChanged
 @export var deceleration := 1100.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
-@onready var sword: Sprite2D = $Sprite2D/Sword
+@onready var sword: Sprite2D = $Sword
 
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
@@ -71,13 +71,12 @@ func _physics_process(delta: float) -> void:
 	var has_input_direction = Input.get_vector("move_left", "move_right", "move_down", "move_up")
 	var input_direction = Input.get_vector("move_left", "move_right", "move_down", "move_up")
 	if input_direction.x !=0:
-			$Sprite2D.flip_h = input_direction.x > 0
+		$Sprite2D.flip_h = input_direction.x > 0
 	if has_input_direction:
 		var desired_velocity := direction * max_speed
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
-	
 	move_and_slide()
 	handleInput()
 	#updateAnimation()
@@ -90,10 +89,9 @@ func _physics_process(delta: float) -> void:
 	elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
 		current_look_dir = "right"
 		
-	
 	if Input.is_action_pressed("attack") and can_slash:
-		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("slash").length / slash_time
-		$Sprite2D/Sword/AnimationPlayer.play("slash")
+		$Sword/AnimationPlayer.speed_scale = $Sword/AnimationPlayer.get_animation("slash").length / slash_time
+		$Sword/AnimationPlayer.play("slash")
 		can_slash = false
 	
 func spawn_slash():
@@ -122,7 +120,7 @@ func knockback(enemyVelocity: Vector2):
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "slash":
-		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("sword_return").length / sword_return_time
-		$Sprite2D/Sword/AnimationPlayer.play("sword_return")
+		$Sword/AnimationPlayer.speed_scale = $Sword/AnimationPlayer.get_animation("sword_return").length / sword_return_time
+		$Sword/AnimationPlayer.play("sword_return")
 	else:
 		can_slash = true
