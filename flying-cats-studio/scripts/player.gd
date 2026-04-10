@@ -68,7 +68,10 @@ func updateAnimation():
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var has_input_direction := direction.length() > 0.0
+	var has_input_direction = Input.get_vector("move_left", "move_right", "move_down", "move_up")
+	var input_direction = Input.get_vector("move_left", "move_right", "move_down", "move_up")
+	if input_direction.x !=0:
+			$Sprite2D.flip_h = input_direction.x > 0
 	if has_input_direction:
 		var desired_velocity := direction * max_speed
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
