@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=9 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
+[ext_resource type="PackedScene" uid="uid://cceu0fq64q88o" path="res://scenes/ocean_map.tscn" id="2_pw728"]
 [ext_resource type="PackedScene" uid="uid://ulvpmos54la4" path="res://scenes/obstacle.tscn" id="2_s02eq"]
 [ext_resource type="PackedScene" uid="uid://bfh2r6snhtqj8" path="res://scenes/enemy.tscn" id="3_s02eq"]
 [ext_resource type="PackedScene" uid="uid://cnh8lgimorf7m" path="res://scenes/Enemy_Health_Bar.tscn" id="4_kddbv"]
@@ -11,13 +12,17 @@
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
 
+[node name="OceanMap" parent="." instance=ExtResource("2_pw728")]
+position = Vector2(-6236, 1405)
+
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true
-position = Vector2(290, 256)
+position = Vector2(-5970, 812)
 
 [node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
 unique_name_in_owner = true
-position = Vector2(1983, 1137)
+position = Vector2(-3953, -1666)
+metadata/_edit_group_ = true
 
 [node name="EnemyHealthBar2" parent="Enemy" node_paths=PackedStringArray("player") instance=ExtResource("4_kddbv")]
 self_modulate = Color(1.3957917e-06, 0.6002792, 0.32660443, 1)
@@ -29,6 +34,7 @@ value = 100.0
 fill_mode = 1
 show_percentage = false
 player = NodePath("../../Player")
+metadata/_edit_use_anchors_ = true
 
 [node name="Obstacles" type="Node" parent="."]
 
