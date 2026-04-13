@@ -21,7 +21,7 @@ position = Vector2(-5970, 812)
 
 [node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
 unique_name_in_owner = true
-position = Vector2(-3953, -1666)
+position = Vector2(-3139, -811)
 metadata/_edit_group_ = true
 
 [node name="EnemyHealthBar2" parent="Enemy" node_paths=PackedStringArray("player") instance=ExtResource("4_kddbv")]
@@ -65,19 +65,19 @@ position = Vector2(2163, 710)
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Collectable" parent="Collectables" instance=ExtResource("5_bdpbv")]
-position = Vector2(420, 951)
+position = Vector2(-1786, -66)
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource("5_bdpbv")]
-position = Vector2(776, 775)
+position = Vector2(-10996, -495)
 
 [node name="Collectable3" parent="Collectables" instance=ExtResource("5_bdpbv")]
-position = Vector2(868, 1411)
+position = Vector2(-5205, 2906)
 
 [node name="Collectable4" parent="Collectables" instance=ExtResource("5_bdpbv")]
-position = Vector2(1524, 683)
+position = Vector2(-6127, 2298)
 
 [node name="Collectable5" parent="Collectables" instance=ExtResource("5_bdpbv")]
-position = Vector2(1438, 1373)
+position = Vector2(-3738, 2434)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
