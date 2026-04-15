@@ -14,7 +14,7 @@ signal healthChanged
 @onready var hurt_timer: Timer = $HurtTimer
 @onready var sword: Sprite2D = $Sword
 
-@export var maxHealth = 30
+@export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
 var current_look_dir = "left"
@@ -22,9 +22,9 @@ var current_look_dir = "left"
 var can_slash: bool = true
 @export var slash_time: float = 0.2
 @export var sword_return_time: float = 0.5
-@export var weapon_damage: float = 50.0
+@export var weapon_damage: float = 100.0
 
-@export var knockbackPower: int = 500
+@export var knockbackPower: int = 200
 
 var lastAnimDirection: String = "Down"
 var isHurt: bool = false
@@ -98,9 +98,9 @@ func spawn_slash():
 	pass
 	
 func hurtByEnemy(area):
-	currentHealth -= 10
+	currentHealth -= 50
 	if currentHealth < 0:
-		currentHealth = maxHealth
+		die()
 		
 	isHurt = true
 	healthChanged.emit()
@@ -111,6 +111,10 @@ func hurtByEnemy(area):
 	await hurt_timer.timeout
 	#effects.play("RESET")
 	isHurt = false
+		
+func die() -> void: 
+	if get_tree():
+		get_tree().reload_current_scene()
 	
 func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
