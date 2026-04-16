@@ -30,6 +30,7 @@ var lastAnimDirection: String = "Down"
 var isHurt: bool = false
 var isAttacking: bool = false
 
+
 func _ready():
 	#effects.play("RESET")
 	pass
@@ -84,10 +85,10 @@ func _physics_process(delta: float) -> void:
 		for area in hurt_box.get_overlapping_areas():
 			if area.name == "HitBox":
 				hurtByEnemy(area)
-	if current_look_dir == "right" and get_global_mouse_position().x < global_position.x:
-		current_look_dir = "left"
-	elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
-		current_look_dir = "right"
+	#if current_look_dir == "right" and get_global_mouse_position().x < global_position.x:
+		#current_look_dir = "left"
+	#elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
+		#current_look_dir = "right"
 		
 	if Input.is_action_pressed("attack") and can_slash:
 		$Sword/AnimationPlayer.speed_scale = $Sword/AnimationPlayer.get_animation("slash").length / slash_time
@@ -107,7 +108,8 @@ func hurtByEnemy(area):
 	
 	knockback(area.get_parent().velocity)
 	#effects.play("hurtBlink")
-	hurt_timer.start()
+	if hurt_timer and hurt_timer.is_inside_tree():
+		hurt_timer.start()
 	await hurt_timer.timeout
 	#effects.play("RESET")
 	isHurt = false
@@ -119,6 +121,8 @@ func die() -> void:
 func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockbackDirection
+	if not is_inside_tree():
+		return
 	move_and_slide()
 	
 

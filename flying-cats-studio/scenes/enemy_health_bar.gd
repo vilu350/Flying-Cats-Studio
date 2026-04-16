@@ -7,5 +7,5 @@ func _ready():
 	update()
 
 func update():
-	value = enemy.currentHealth * 100 / enemy.maxHealth
+	value = enemy.currentHealth#* 100 / player.maxHealth
 	
