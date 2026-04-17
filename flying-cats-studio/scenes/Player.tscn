@@ -110,11 +110,13 @@ _data = {
 &"sword_return": SubResource("Animation_mdl7e")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdl7e"]
-size = Vector2(14, 27)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
+radius = 6.0
+height = 27.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu4a1"]
-size = Vector2(14, 27)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdl7e"]
+radius = 7.0
+height = 29.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ij6vw")
@@ -135,7 +137,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_mdl7e")
+shape = SubResource("CapsuleShape2D_3li8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -145,7 +147,8 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_qu4a1")
+shape = SubResource("CapsuleShape2D_mdl7e")
+debug_color = Color(0.82007533, 0.39627144, 0.20714733, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
