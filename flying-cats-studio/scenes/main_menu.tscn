@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ckm8th450x1de"]
+[gd_scene load_steps=2 format=3 uid="uid://ckm8th450x1de"]
+
+[ext_resource type="Script" uid="uid://b8pd63a8dm83s" path="res://scripts/video.gd" id="1_l6cm7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -148,7 +150,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Language"
 
-[node name="Video" type="VBoxContainer" parent="."]
+[node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
 visible = false
 custom_minimum_size = Vector2(165, 150)
 layout_mode = 1
@@ -163,6 +165,11 @@ offset_right = 82.5
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l6cm7")
+resolution_option = NodePath("HBoxContainer/Resolution")
+fullscreen_check = NodePath("HBoxContainer2/Fullscreen")
+borderless_check = NodePath("HBoxContainer3/Borderless")
+vsync_check = NodePath("HBoxContainer4/VSync")
 
 [node name="Label" type="Label" parent="Video"]
 layout_mode = 2
@@ -351,6 +358,7 @@ layout_mode = 2
 text = "D"
 
 [node name="Language" type="VBoxContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -382,3 +390,15 @@ text = "Language"
 [node name="Language" type="OptionButton" parent="Language/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -46.0
+offset_right = 65.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "Back"
