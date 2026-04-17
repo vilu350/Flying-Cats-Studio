@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Enemy
 signal healthChanged
-#left off at M9L13 half way down
+
 @onready var _hit_box: Area2D = %HitBox
 
 @export var maxHealth = 30

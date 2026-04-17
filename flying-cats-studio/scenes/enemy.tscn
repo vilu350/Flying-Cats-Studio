@@ -1,23 +1,26 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfh2r6snhtqj8"]
 
 [ext_resource type="Script" uid="uid://di2b8sptlwu01" path="res://scripts/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://li4bh4x6nks5" path="res://sprites/icon.svg" id="2_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://d06acksusv7gr" path="res://sprites/shark.png" id="2_md0e3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
-radius = 62.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ra3w"]
+radius = 9.0
+height = 44.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
-size = Vector2(128, 118)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5uy6h"]
+radius = 12.0
+height = 52.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_44cfe")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.37, 0.37, 1)
-texture = ExtResource("2_qi2p4")
+texture = ExtResource("2_md0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4ra3w")
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -25,4 +28,6 @@ collision_layer = 3
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("RectangleShape2D_md0e3")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5uy6h")
+debug_color = Color(0.80341893, 0.41704267, 0.078436695, 0.41960785)
