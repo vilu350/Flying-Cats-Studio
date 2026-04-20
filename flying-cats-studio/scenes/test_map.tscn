@@ -21,20 +21,18 @@ position = Vector2(-5970, 812)
 
 [node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
 unique_name_in_owner = true
-position = Vector2(-3139, -811)
+position = Vector2(-3119, -787)
 metadata/_edit_group_ = true
 
-[node name="EnemyHealthBar2" parent="Enemy" node_paths=PackedStringArray("player") instance=ExtResource("4_kddbv")]
-self_modulate = Color(1.3957917e-06, 0.6002792, 0.32660443, 1)
-offset_left = -75.0
+[node name="EnemyHealthBar" parent="Enemy" node_paths=PackedStringArray("enemy") instance=ExtResource("4_kddbv")]
+self_modulate = Color(0, 0.6, 0.3254902, 1)
+offset_left = -74.0
 offset_top = -93.0
 offset_right = 69.0
 offset_bottom = -66.0
 value = 100.0
 fill_mode = 1
-show_percentage = false
-player = NodePath("../../Player")
-metadata/_edit_use_anchors_ = true
+enemy = NodePath("..")
 
 [node name="Obstacles" type="Node" parent="."]
 

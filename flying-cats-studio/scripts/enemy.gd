@@ -5,7 +5,7 @@ signal healthChanged
 
 @onready var _hit_box: Area2D = %HitBox
 
-@export var maxHealth = 30
+@export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
 
@@ -39,6 +39,7 @@ func take_damage(weapon_damage: float):
 	
 	# Die
 	queue_free()
+
 	
 func update_health(amount):
 	currentHealth -= amount

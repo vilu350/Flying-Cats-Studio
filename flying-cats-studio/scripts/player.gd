@@ -14,7 +14,7 @@ signal healthChanged
 @onready var hurt_timer: Timer = $HurtTimer
 @onready var sword: Sprite2D = $Sprite2D/Sword
 
-@export var maxHealth = 30
+@export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
 var current_look_dir = "left"
@@ -85,10 +85,10 @@ func _physics_process(delta: float) -> void:
 		for area in hurt_box.get_overlapping_areas():
 			if area.name == "HitBox":
 				hurtByEnemy(area)
-	if current_look_dir == "right" and get_global_mouse_position().x < global_position.x:
-		current_look_dir = "left"
-	elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
-		current_look_dir = "right"
+	#if current_look_dir == "right" and get_global_mouse_position().x < global_position.x:
+		#current_look_dir = "left"
+	#elif current_look_dir == "left" and get_global_mouse_position().x > global_position.x:
+		#current_look_dir = "right"
 		
 	
 	if Input.is_action_pressed("attack") and can_slash:
@@ -99,20 +99,27 @@ func _physics_process(delta: float) -> void:
 func spawn_slash():
 	pass
 	
+	
 func hurtByEnemy(area):
-	currentHealth -= 10
+	currentHealth -= 50
 	if currentHealth < 0:
-		currentHealth = maxHealth
+		die()
 		
 	isHurt = true
 	healthChanged.emit()
 	
 	knockback(area.get_parent().velocity)
 	#effects.play("hurtBlink")
-	hurt_timer.start()
+	if hurt_timer and hurt_timer.is_inside_tree():
+		hurt_timer.start()
 	await hurt_timer.timeout
 	#effects.play("RESET")
 	isHurt = false
+		
+func die() -> void: 
+	if get_tree():
+		get_tree().reload_current_scene()
+
 	
 func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower

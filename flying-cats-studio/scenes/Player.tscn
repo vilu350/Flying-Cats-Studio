@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c3t26ejgfvyr1"]
 
 [ext_resource type="Script" uid="uid://cagenrx6eaxoj" path="res://scripts/player.gd" id="1_ij6vw"]
-[ext_resource type="Texture2D" uid="uid://cy46qafv13bxo" path="res://sprites/character.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://e73jjgx2dwph" path="res://scenes/Player Standing.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://c3nnv308fvv7f" path="res://scenes/Sword.tscn" id="3_3li8b"]
 
 [sub_resource type="Animation" id="Animation_70d11"]
@@ -112,17 +112,16 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
 radius = 6.0
-height = 27.0
+height = 26.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdl7e"]
 radius = 7.0
-height = 29.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ij6vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, -4)
 texture = ExtResource("2_qhqgy")
 
 [node name="Sword" parent="Sprite2D" instance=ExtResource("3_3li8b")]
@@ -136,7 +135,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_3li8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -146,7 +145,7 @@ zoom = Vector2(3, 3)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -0.5)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_mdl7e")
 debug_color = Color(0.82007533, 0.39627144, 0.20714733, 0.41960785)
 
