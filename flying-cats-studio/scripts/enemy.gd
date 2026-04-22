@@ -5,7 +5,7 @@ signal healthChanged
 
 @onready var _hit_box: Area2D = %HitBox
 
-@export var maxHealth = 30
+@export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
 
@@ -33,11 +33,15 @@ func take_damage(weapon_damage: float):
 	new_gem.global_position = global_position
 	get_tree().current_scene.call_deferred("add_child", new_gem)
 	health -= weapon_damage
-	
-	if health <= 0.0:
-		queue_free()
-	
-	# Die
+	#if health <= 0.0:
+		#queue_free()
+
+func hurtByPlayer(_area):
+	currentHealth -= 50
+	if currentHealth < 0:
+		die()
+		
+func die() -> void:
 	queue_free()
 	
 func update_health(amount):

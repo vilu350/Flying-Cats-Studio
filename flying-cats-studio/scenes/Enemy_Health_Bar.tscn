@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnh8lgimorf7m"]
 
-[ext_resource type="Script" uid="uid://c1doxcsmq0afp" path="res://scripts/HealthBar.gd" id="1_arqi2"]
+[ext_resource type="Script" uid="uid://c4j8mkprsxuyv" path="res://scenes/enemy_health_bar.gd" id="1_arqi2"]
 
 [node name="EnemyHealthBar" type="ProgressBar"]
 offset_right = 32.0
 offset_bottom = 27.0
+value = 100.0
 script = ExtResource("1_arqi2")
