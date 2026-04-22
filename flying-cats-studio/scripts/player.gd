@@ -100,7 +100,7 @@ func spawn_slash():
 	pass
 	
 func hurtByEnemy(area):
-	currentHealth -= 50
+	currentHealth -= 10
 	if currentHealth < 0:
 		die()
 		

@@ -30,6 +30,7 @@ offset_left = -73.0
 offset_top = -93.0
 offset_right = 69.0
 offset_bottom = -66.0
+value = 100.0
 enemy = NodePath("..")
 
 [node name="Obstacles" type="Node" parent="."]
