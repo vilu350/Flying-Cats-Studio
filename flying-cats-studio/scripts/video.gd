@@ -17,12 +17,12 @@ func _ready():
 	for res in resolutions: 
 		resolution_option.add_item("%dx%d" % [res.x, res.y])
 		
-		load_current_settings()
+	load_current_settings()
 		
-		resolution_option.item_selected.connect(_on_resolution_selected)
-		fullscreen_check.toggled.connect(_on_fullscreen_toggled)
-		borderless_check.toggled.connect(_on_borderless_toggled)
-		vsync_check.toggled.connect(_on_vsync_toggled)
+	resolution_option.item_selected.connect(_on_resolution_selected)
+	fullscreen_check.toggled.connect(_on_fullscreen_toggled)
+	borderless_check.toggled.connect(_on_borderless_toggled)
+	vsync_check.toggled.connect(_on_vsync_toggled)
 		
 
 func load_current_settings():
