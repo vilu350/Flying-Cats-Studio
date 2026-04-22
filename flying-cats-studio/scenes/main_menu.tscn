@@ -90,7 +90,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -50.0
+offset_top = -65.0
 offset_right = 50.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -151,7 +153,6 @@ grow_vertical = 2
 text = "Language"
 
 [node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
-visible = false
 custom_minimum_size = Vector2(165, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -233,10 +234,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -97.5
+offset_top = -75.0
+offset_right = 97.5
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 
