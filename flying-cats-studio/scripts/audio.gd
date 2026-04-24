@@ -31,7 +31,7 @@ func _slider_to_db(value: float) -> float:
 func _db_to_slider(db: float) -> float:
 	if db <= MIN_DB:
 		return 0.0
-	var linear = _db_to_slider(db)
+	var linear = db_to_linear(db)
 	return clamp(linear * 100.0, 0.0, 100.0)
 	
 func _set_volume(bus_name: String, value: float):

@@ -1,16 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckm8th450x1de"]
+[gd_scene load_steps=6 format=3 uid="uid://ckm8th450x1de"]
 
+[ext_resource type="Script" uid="uid://rf24uu4w81fh" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://b8pd63a8dm83s" path="res://scripts/video.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://cbnfcog67jicp" path="res://scripts/audio.gd" id="2_ekxnf"]
 [ext_resource type="Script" uid="uid://c7lmsjtar7lsp" path="res://scripts/controls.gd" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://bfci0f2yap2jj" path="res://scripts/language.gd" id="4_wu84c"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("menu", "main_settings", "video_settings", "audio_settings", "control_settings", "language_settings", "back_button", "video_button", "audio_button", "controls_button", "language_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ln24")
+menu = NodePath("Menu")
+main_settings = NodePath("Settings")
+video_settings = NodePath("Video")
+audio_settings = NodePath("Audio")
+control_settings = NodePath("Controls")
+language_settings = NodePath("Language")
+back_button = NodePath("Back")
+video_button = NodePath("Settings/Control/Video")
+audio_button = NodePath("Settings/Control2/Audio")
+controls_button = NodePath("Settings/Control3/Controls")
+language_button = NodePath("Settings/Control4/Language")
 
 [node name="Menu" type="VBoxContainer" parent="."]
 visible = false
@@ -370,7 +384,7 @@ text = "Right"
 layout_mode = 2
 text = "D"
 
-[node name="Language" type="VBoxContainer" parent="."]
+[node name="Language" type="VBoxContainer" parent="." node_paths=PackedStringArray("language_option")]
 visible = false
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 1
@@ -385,6 +399,8 @@ offset_right = 100.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_wu84c")
+language_option = NodePath("HBoxContainer/Language")
 
 [node name="Label" type="Label" parent="Language"]
 layout_mode = 2

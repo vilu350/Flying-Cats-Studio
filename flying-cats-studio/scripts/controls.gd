@@ -14,6 +14,14 @@ const ACTIONS = {
 	
 var waiting_for_input: String = ""
 
+func _ready():
+	_update_button_labels()
+	
+	up_button.pressed.connect(_on_rebind_button_pressed.bind("up"))
+	left_button.pressed.connect(_on_rebind_button_pressed.bind("left"))
+	down_button.pressed.connect(_on_rebind_button_pressed.bind("down"))
+	right_button.pressed.connect(_on_rebind_button_pressed.bind("right"))
+
 func _get_button(direction: String) -> Button:
 	match direction:
 		"up": return up_button
@@ -38,3 +46,29 @@ func _update_button_label(direction: String):
 	
 	var btn = _get_button(direction)
 	btn.text = "%s" % [label_text]
+	
+func _update_button_labels():
+	for dir in ACTIONS.keys():
+		_update_button_label(dir)
+		
+func _on_rebind_button_pressed(direction: String):
+	waiting_for_input = direction
+	var btn = _get_button(direction)
+	btn.text = ". . ."
+	set_process_input(true)
+	
+func _input(event):
+	if waiting_for_input == "":
+		return
+		
+	if event is InputEventKey and event.pressed:
+		var direction = waiting_for_input
+		var action_name = ACTIONS[direction]
+		
+		InputMap.action_erase_events(action_name)
+		InputMap.action_add_event(action_name, event)
+		
+		_update_button_label(direction)
+		
+		waiting_for_input = ""
+		set_process_input(false)
