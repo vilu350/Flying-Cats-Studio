@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 				hurtByPlayer(area)
 
 func hurtByPlayer(_area):
-	currentHealth -= 50
+	currentHealth -= 5
 	if currentHealth < 0:
 		die()
 		

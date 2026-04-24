@@ -21,4 +21,4 @@ func _physics_process(_delta: float) -> void:
 				hurtBySword(Area2D)
 
 func hurtBySword(_area):
-	enemy.currentHealth -= 100
+	enemy.currentHealth -= 10
