@@ -4,6 +4,7 @@ class_name Enemy
 signal healthChanged
 
 @onready var _hit_box: Area2D = %HitBox
+@onready var enemy_visual: Sprite2D = %EnemyVisual
 
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
@@ -24,6 +25,9 @@ func _physics_process(delta: float) -> void:
 	var desired_velocity := direction * speed
 	velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 	move_and_slide()
+	
+	if direction.x !=0:
+			enemy_visual.flip_h = direction.x < 0
 	
 	if !isHurt:
 		for area in _hit_box.get_overlapping_areas():
