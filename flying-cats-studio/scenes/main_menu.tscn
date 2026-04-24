@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckm8th450x1de"]
+[gd_scene load_steps=4 format=3 uid="uid://ckm8th450x1de"]
 
 [ext_resource type="Script" uid="uid://b8pd63a8dm83s" path="res://scripts/video.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://cbnfcog67jicp" path="res://scripts/audio.gd" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://c7lmsjtar7lsp" path="res://scripts/controls.gd" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -153,6 +155,7 @@ grow_vertical = 2
 text = "Language"
 
 [node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
+visible = false
 custom_minimum_size = Vector2(165, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -225,7 +228,7 @@ text = "VSync"
 [node name="VSync" type="CheckBox" parent="Video/HBoxContainer4"]
 layout_mode = 2
 
-[node name="Audio" type="VBoxContainer" parent="."]
+[node name="Audio" type="VBoxContainer" parent="." node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
 visible = false
 custom_minimum_size = Vector2(195, 150)
 layout_mode = 1
@@ -240,6 +243,10 @@ offset_right = 97.5
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_ekxnf")
+master_slider = NodePath("HBoxContainer/Master")
+music_slider = NodePath("HBoxContainer2/Music")
+sfx_slider = NodePath("HBoxContainer3/SFX")
 
 [node name="Label" type="Label" parent="Audio"]
 layout_mode = 2
@@ -285,7 +292,7 @@ text = "SFX"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="Controls" type="VBoxContainer" parent="."]
+[node name="Controls" type="VBoxContainer" parent="." node_paths=PackedStringArray("up_button", "left_button", "down_button", "right_button")]
 visible = false
 custom_minimum_size = Vector2(150, 175)
 layout_mode = 1
@@ -300,6 +307,11 @@ offset_right = 75.0
 offset_bottom = 87.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_bqqt6")
+up_button = NodePath("HBoxContainer/Up")
+left_button = NodePath("HBoxContainer2/Left")
+down_button = NodePath("HBoxContainer4/Down")
+right_button = NodePath("HBoxContainer3/Right")
 
 [node name="Label" type="Label" parent="Controls"]
 layout_mode = 2
