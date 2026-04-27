@@ -9,7 +9,7 @@ const ACTIONS = {
 	"up": "move_up", 
 	"left": "move_left",
 	"down": "move_down",
-	"right": "move_right"
+	"right": "move_right",
 }
 	
 var waiting_for_input: String = ""

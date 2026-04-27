@@ -7,7 +7,7 @@ var languages := {
 	"Spanish (n/a)": "es",
 	"French (n/a)": "fr",
 	"Chinese (n/a)": "cn",
-	"Japanese (n/a)": "jp"
+	"Japanese (n/a)": "jp",
 }
 
 func _ready():

@@ -14,6 +14,10 @@ config/name="Flying Cats Studio"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
+[autoload]
+
+SettingsManager="*res://scenes/settings_manager.tscn"
+
 [input]
 
 move_left={

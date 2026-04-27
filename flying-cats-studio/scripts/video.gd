@@ -12,7 +12,7 @@ func _ready():
 		Vector2i(1600, 900),
 		Vector2i(1280, 720),
 		Vector2i(640, 360),
-		Vector2i(320, 180)
+		Vector2i(320, 180),
 	]
 	for res in resolutions: 
 		resolution_option.add_item("%dx%d" % [res.x, res.y])
