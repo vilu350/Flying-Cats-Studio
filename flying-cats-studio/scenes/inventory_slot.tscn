@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfvnemhi7uia7"]
+
+[ext_resource type="Script" uid="uid://ju37grdjww16" path="res://scenes/inventory_slot.gd" id="1_dxvxp"]
+
+[node name="InventorySlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 191.0
+offset_bottom = 169.0
+script = ExtResource("1_dxvxp")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Highlight" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.19908628, 0.3555032, 0.4188596, 1)
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
