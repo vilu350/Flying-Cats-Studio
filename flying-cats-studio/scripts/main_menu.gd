@@ -8,6 +8,10 @@ extends Control
 @export var language_settings: VBoxContainer
 @export var back_button: Button
 
+@export var enter_button: Button
+@export var settings_button: Button
+@export var quit_button: Button
+
 @export var video_button: Button
 @export var audio_button: Button
 @export var controls_button: Button
@@ -22,6 +26,9 @@ func _ready():
 	_update_back_button()
 	
 	back_button.pressed.connect(_on_back_pressed)
+	enter_button.pressed.connect(_on_enter_pressed)
+	settings_button.pressed.connect(_navigate_to.bind(main_settings))
+	quit_button.pressed.connect(_on_quit_pressed)
 	video_button.pressed.connect(_navigate_to.bind(video_settings))
 	audio_button.pressed.connect(_navigate_to.bind(audio_settings))
 	controls_button.pressed.connect(_navigate_to.bind(control_settings))
@@ -50,3 +57,10 @@ func _on_back_pressed():
 	current_panel = nav_stack.pop_back()
 	_show_panel(current_panel)
 	_update_back_button()
+	SettingsManager.save_settings()
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+func _on_enter_pressed():
+	get_tree().change_scene_to_file("res://scenes/test_map.tscn")

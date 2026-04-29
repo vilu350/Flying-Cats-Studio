@@ -48,6 +48,3 @@ func _on_music_volume_changed(value: float):
 
 func _on_sfx_volume_changed(value: float):
 	_set_volume("SFX", value)
-
-
-	
