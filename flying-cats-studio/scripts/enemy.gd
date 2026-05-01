@@ -7,7 +7,7 @@ signal healthChanged
 @onready var enemy_visual: Sprite2D = %EnemyVisual
 
 @export var maxHealth = 100
-@onready var currentHealth: int = maxHealth
+var currentHealth: int = maxHealth
 
 
 @export var max_speed := 1000.0
