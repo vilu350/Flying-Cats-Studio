@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckm8th450x1de"]
+[gd_scene load_steps=7 format=3 uid="uid://ckm8th450x1de"]
 
 [ext_resource type="Script" uid="uid://rf24uu4w81fh" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://b8pd63a8dm83s" path="res://scripts/video.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://cbnfcog67jicp" path="res://scripts/audio.gd" id="2_ekxnf"]
+[ext_resource type="Theme" uid="uid://cp3t3gwqv0hss" path="res://main_menu.tres" id="2_rtw2f"]
 [ext_resource type="Script" uid="uid://c7lmsjtar7lsp" path="res://scripts/controls.gd" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://bfci0f2yap2jj" path="res://scripts/language.gd" id="4_wu84c"]
 
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_rtw2f")
 script = ExtResource("1_8ln24")
 menu = NodePath("Menu")
 main_settings = NodePath("Settings")
@@ -38,10 +40,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -52,15 +54,13 @@ size_flags_vertical = 7
 
 [node name="Enter" type="Button" parent="Menu/Control"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -15.5
-offset_bottom = 15.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 15.5)
+theme = ExtResource("2_rtw2f")
 text = "Enter"
 
 [node name="Control2" type="Control" parent="Menu"]
@@ -70,15 +70,13 @@ size_flags_vertical = 7
 
 [node name="Settings" type="Button" parent="Menu/Control2"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -15.5
-offset_bottom = 15.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 15.5)
+theme = ExtResource("2_rtw2f")
 text = "Settings"
 
 [node name="Control3" type="Control" parent="Menu"]
@@ -88,20 +86,18 @@ size_flags_vertical = 7
 
 [node name="Quit" type="Button" parent="Menu/Control3"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -15.5
-offset_bottom = 15.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 15.5)
+theme = ExtResource("2_rtw2f")
 text = "Quit"
 
 [node name="Settings" type="VBoxContainer" parent="."]
 visible = false
-custom_minimum_size = Vector2(100, 130)
+custom_minimum_size = Vector2(200, 230)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -194,6 +190,7 @@ vsync_check = NodePath("HBoxContainer4/VSync")
 
 [node name="Label" type="Label" parent="Video"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Video"
 horizontal_alignment = 1
 
@@ -204,10 +201,12 @@ theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="Video/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Resolution"
 
 [node name="Resolution" type="OptionButton" parent="Video/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Video"]
 layout_mode = 2
@@ -216,6 +215,7 @@ theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="Video/HBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Fullscreen"
 
 [node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer2"]
@@ -228,6 +228,7 @@ theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="Video/HBoxContainer3"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Borderless"
 
 [node name="Borderless" type="CheckBox" parent="Video/HBoxContainer3"]
@@ -240,6 +241,7 @@ theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="Video/HBoxContainer4"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "VSync"
 
 [node name="VSync" type="CheckBox" parent="Video/HBoxContainer4"]
@@ -267,6 +269,7 @@ sfx_slider = NodePath("HBoxContainer3/SFX")
 
 [node name="Label" type="Label" parent="Audio"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Audio"
 horizontal_alignment = 1
 
@@ -277,6 +280,7 @@ theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Audio/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Master"
 
 [node name="Master" type="HSlider" parent="Audio/HBoxContainer"]
@@ -290,6 +294,7 @@ theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Audio/HBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "Music"
 
 [node name="Music" type="HSlider" parent="Audio/HBoxContainer2"]
@@ -303,6 +308,7 @@ theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Audio/HBoxContainer3"]
 layout_mode = 2
+theme = ExtResource("2_rtw2f")
 text = "SFX"
 
 [node name="SFX" type="HSlider" parent="Audio/HBoxContainer3"]
@@ -337,7 +343,6 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Controls"]
 layout_mode = 2
-size_flags_horizontal = 0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Controls/HBoxContainer"]
@@ -350,7 +355,6 @@ text = "W"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Controls"]
 layout_mode = 2
-size_flags_horizontal = 0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Controls/HBoxContainer2"]
@@ -363,7 +367,6 @@ text = "A"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Controls"]
 layout_mode = 2
-size_flags_horizontal = 0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Controls/HBoxContainer4"]
@@ -376,7 +379,6 @@ text = "S"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Controls"]
 layout_mode = 2
-size_flags_horizontal = 0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="Controls/HBoxContainer3"]
@@ -429,8 +431,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = -46.0
-offset_right = 65.0
+offset_top = -68.0
+offset_right = 172.0
 offset_bottom = -15.0
 grow_vertical = 0
 text = "Back"
