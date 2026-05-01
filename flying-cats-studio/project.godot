@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Flying Cats Studio"
-run/main_scene="uid://3mubng0v8qua"
+run/main_scene="uid://ckm8th450x1de"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
 [autoload]
 
 SettingsManager="*res://scenes/settings_manager.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
