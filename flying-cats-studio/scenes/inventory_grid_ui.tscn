@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyiyb2k1mbnme"]
+[gd_scene load_steps=3 format=3 uid="uid://cyiyb2k1mbnme"]
 
 [ext_resource type="Script" uid="uid://d2101vkvi1p31" path="res://scenes/inventory_grid_ui.gd" id="1_r7n16"]
+[ext_resource type="PackedScene" uid="uid://bfvnemhi7uia7" path="res://scenes/inventory_slot.tscn" id="2_2eklg"]
 
 [node name="InventoryGridUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_r7n16")
+slot_scene = ExtResource("2_2eklg")
