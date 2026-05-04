@@ -3,10 +3,10 @@ extends Node
 const CONFIG_PATH := "user://settings.cfg"
 
 var video_settings := {
-	"resolution": Vector2i(1280, 720), 
+	#"resolution": Vector2i(1280, 720), 
 	"fullscreen": false, 
-	"borderless": false, 
-	"vsync": false,
+	#"borderless": false, 
+	#"vsync": false,
 }
 
 var audio_settings := {
@@ -67,15 +67,15 @@ func load_settings():
 				
 func apply_video_settings():
 	var v = video_settings
-	DisplayServer.window_set_vsync_mode(
-		DisplayServer.VSYNC_ENABLED if v["vsync"] else DisplayServer.VSYNC_DISABLED
-	)
+	#DisplayServer.window_set_vsync_mode(
+		#DisplayServer.VSYNC_ENABLED if v["vsync"] else DisplayServer.VSYNC_DISABLED
+	#)
 	DisplayServer.window_set_mode(
 		DisplayServer.WINDOW_MODE_FULLSCREEN if v["fullscreen"] else 
 		DisplayServer.WINDOW_MODE_WINDOWED
 	)
-	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, v["borderless"])
-	DisplayServer.window_set_size(v["resolution"])
+	#DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, v["borderless"])
+	#DisplayServer.window_set_size(v["resolution"])
 	
 func apply_audio_settings():
 	var master_db = linear_to_db(clamp(audio_settings["master_volume"], 0.0, 1.0))

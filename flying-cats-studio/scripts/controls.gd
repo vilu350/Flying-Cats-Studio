@@ -4,12 +4,14 @@ extends VBoxContainer
 @export var left_button: Button
 @export var down_button: Button
 @export var right_button: Button
+#@export var return_button: Button
 
 const ACTIONS = {
 	"up": "move_up", 
 	"left": "move_left",
 	"down": "move_down",
 	"right": "move_right",
+	#"return": "return_to_menu",
 }
 	
 var waiting_for_input: String = ""
@@ -21,6 +23,7 @@ func _ready():
 	left_button.pressed.connect(_on_rebind_button_pressed.bind("left"))
 	down_button.pressed.connect(_on_rebind_button_pressed.bind("down"))
 	right_button.pressed.connect(_on_rebind_button_pressed.bind("right"))
+	#return_button.pressed.connect(_on_rebind_button_pressed.bind("return"))
 
 func _get_button(direction: String) -> Button:
 	match direction:
@@ -28,6 +31,7 @@ func _get_button(direction: String) -> Button:
 		"left": return left_button
 		"down": return down_button
 		"right": return right_button
+		#"return": return return_button
 		_: return null
 		
 func _update_button_label(direction: String):

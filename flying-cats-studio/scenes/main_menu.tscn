@@ -165,7 +165,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Language"
 
-[node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
+[node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("fullscreen_check")]
 visible = false
 custom_minimum_size = Vector2(365, 350)
 layout_mode = 1
@@ -181,32 +181,15 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-resolution_option = NodePath("HBoxContainer/Resolution")
 fullscreen_check = NodePath("HBoxContainer2/Fullscreen")
-borderless_check = NodePath("HBoxContainer3/Borderless")
-vsync_check = NodePath("HBoxContainer4/VSync")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Video"]
 layout_mode = 2
 theme = ExtResource("2_rtw2f")
-text = "Video"
+text = "Video
+[resolution/vsync TBA]"
 horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="Video/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_rtw2f")
-text = "Resolution"
-
-[node name="Resolution" type="OptionButton" parent="Video/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 24
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Video"]
 layout_mode = 2
@@ -219,34 +202,6 @@ theme = ExtResource("2_rtw2f")
 text = "Fullscreen"
 
 [node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Video"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="Video/HBoxContainer3"]
-layout_mode = 2
-theme = ExtResource("2_rtw2f")
-text = "Borderless"
-
-[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Video"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="Video/HBoxContainer4"]
-layout_mode = 2
-theme = ExtResource("2_rtw2f")
-text = "VSync"
-
-[node name="VSync" type="CheckBox" parent="Video/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 8
 
