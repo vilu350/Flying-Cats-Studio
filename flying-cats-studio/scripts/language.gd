@@ -4,10 +4,10 @@ extends VBoxContainer
 
 var languages := {
 	"English": "en", 
-	"Spanish (n/a)": "es",
-	"French (n/a)": "fr",
-	"Chinese (n/a)": "cn",
-	"Japanese (n/a)": "jp",
+	#"Spanish (n/a)": "es",
+	#"French (n/a)": "fr",
+	#"Chinese (n/a)": "cn",
+	#"Japanese (n/a)": "jp",
 }
 
 func _ready():
