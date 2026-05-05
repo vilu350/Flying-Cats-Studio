@@ -10,13 +10,13 @@ class_name RarityTable
 
 func roll_rarity() -> LootEnums.Rarity:
 	var total := 0
-	for w in rarity_weights.value():
+	for w in rarity_weights.values():
 		total += w
 		
 	var roll := randi_range(1, total)
 	var sum := 0 
 	
-	for r in rarity_weights.keys:
+	for r in rarity_weights.keys():
 		sum += rarity_weights[r]
 		if roll <= sum:
 			return r

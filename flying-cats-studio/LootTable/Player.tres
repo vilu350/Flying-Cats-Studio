@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDropTable" load_steps=5 format=3 uid="uid://bn4ynv04fyr3l"]
+
+[ext_resource type="Script" uid="uid://kigjmeco0om1" path="res://ItemData.gd" id="1_30iji"]
+[ext_resource type="Resource" uid="uid://cp7xk8bob0m46" path="res://Weapons/Sword.tres" id="2_885kt"]
+[ext_resource type="Resource" uid="uid://cd3k4fo62t8bt" path="res://Weapons/ShortSword.tres" id="3_n85ss"]
+[ext_resource type="Script" uid="uid://cto88b0j6irnw" path="res://scripts/ItemDropTable.gd" id="4_usp0x"]
+
+[resource]
+script = ExtResource("4_usp0x")
+item_weights = Dictionary[ExtResource("1_30iji"), int]({
+ExtResource("2_885kt"): 10,
+ExtResource("3_n85ss"): 5
+})
+metadata/_custom_type_script = "uid://cto88b0j6irnw"

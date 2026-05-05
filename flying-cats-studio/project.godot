@@ -18,6 +18,8 @@ config/icon="res://sprites/icon.svg"
 [autoload]
 
 InventoryManager="*res://scenes/inventory_manager.tscn"
+LootGenerator="*res://scenes/loot_generator.tscn"
+LootDropManager="*res://scenes/loot_drop_manager.tscn"
 
 [input]
 

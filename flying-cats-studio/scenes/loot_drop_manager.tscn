@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvrm33230672e"]
+
+[ext_resource type="Script" uid="uid://dm6neiw0yq7w6" path="res://scripts/loot_drop_manager.gd" id="1_0nfam"]
+[ext_resource type="PackedScene" uid="uid://b1br1fcklq2ys" path="res://scenes/loot_item_scene.tscn" id="2_2qohe"]
+
+[node name="LootDropManager" type="Node"]
+script = ExtResource("1_0nfam")
+loot_item_scene = ExtResource("2_2qohe")

@@ -9,6 +9,7 @@ signal healthChanged
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
+@export var drop_table : ItemDropTable
 
 @export var max_speed := 1000.0
 @export var acceleration := 1100.0
@@ -42,6 +43,12 @@ func hurtByPlayer(_area):
 	healthChanged.emit()
 		
 func die() -> void:
+	var loot = LootGenerator.generate_loot(drop_table)
+	
+	if loot:
+		LootDropManager.spawn_loot(global_position, loot)
+	
+	
 	queue_free()
 
 	
