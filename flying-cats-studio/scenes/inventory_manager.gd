@@ -1,6 +1,6 @@
 extends Node
 
-const GRID_SIZE := Vector2i(6, 4)
+const GRID_SIZE := Vector2i(8, 4)
 
 var grid := {} #Vector2i -> LootItemInstance 
 var grid_ui: InventoryGridUI

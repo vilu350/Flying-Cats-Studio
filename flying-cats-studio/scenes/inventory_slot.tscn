@@ -4,9 +4,11 @@
 
 [node name="InventorySlot" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 191.0
-offset_bottom = 169.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_dxvxp")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -16,11 +18,11 @@ offset_bottom = 40.0
 
 [node name="Highlight" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-color = Color(0.19908628, 0.3555032, 0.4188596, 1)
+offset_left = 25.0
+offset_top = 14.0
+offset_right = 115.0
+offset_bottom = 104.0
+color = Color(0.08627451, 0.08627451, 0.08627451, 0.3529412)
 
 [node name="ItemIcon" type="TextureRect" parent="."]
 layout_mode = 0

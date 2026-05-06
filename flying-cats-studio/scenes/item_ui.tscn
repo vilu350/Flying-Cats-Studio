@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvatv3hqqviry"]
+
+[ext_resource type="Script" uid="uid://7hwidswcodfb" path="res://scripts/item_ui.gd" id="1_sxom2"]
+
+[node name="ItemUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_sxom2")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
