@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AffixData" load_steps=2 format=3 uid="uid://hd132swlv5lh"]
+
+[ext_resource type="Script" uid="uid://b3akneif4xtt2" path="res://Affix.gd" id="1_0vhqj"]
+
+[resource]
+script = ExtResource("1_0vhqj")
+name_format = "Burning %s"
+metadata/_custom_type_script = "uid://b3akneif4xtt2"

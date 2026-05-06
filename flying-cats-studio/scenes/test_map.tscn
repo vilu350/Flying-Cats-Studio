@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=10 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
+[ext_resource type="PackedScene" uid="uid://bnf5s14ykfm77" path="res://scenes/ui.tscn" id="2_6gsqv"]
 [ext_resource type="PackedScene" uid="uid://cceu0fq64q88o" path="res://scenes/ocean_map.tscn" id="2_pw728"]
 [ext_resource type="PackedScene" uid="uid://ulvpmos54la4" path="res://scenes/obstacle.tscn" id="2_s02eq"]
 [ext_resource type="PackedScene" uid="uid://bfh2r6snhtqj8" path="res://scenes/enemy.tscn" id="3_s02eq"]
@@ -9,24 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pw728"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pw728"]
-normal = Vector2(0, 1)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6gsqv"]
-distance = 1.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u56q5"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4mr4y"]
-
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
 
+[node name="UI" parent="." instance=ExtResource("2_6gsqv")]
+
 [node name="OceanMap" parent="." instance=ExtResource("2_pw728")]
 position = Vector2(-6236, 1405)
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true
@@ -98,25 +88,3 @@ offset_right = 363.0
 offset_bottom = 72.0
 value = 100.0
 player = NodePath("../../Player")
-
-[node name="WorldBorder" type="StaticBody2D" parent="."]
-position = Vector2(-6236, 1405)
-physics_material_override = SubResource("PhysicsMaterial_pw728")
-
-[node name="TopBarrier" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(13, -3444)
-shape = SubResource("WorldBoundaryShape2D_pw728")
-
-[node name="LeftBarrier" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(-5155, -1863)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_6gsqv")
-
-[node name="RightBarrier" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(5474, -1282)
-rotation = -1.5707964
-shape = SubResource("WorldBoundaryShape2D_u56q5")
-
-[node name="BottomBarrier" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(156, 3708)
-shape = SubResource("WorldBoundaryShape2D_4mr4y")
