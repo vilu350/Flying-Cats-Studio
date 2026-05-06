@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Flying Cats Studio"
-run/main_scene="uid://3mubng0v8qua"
+run/main_scene="uid://ckm8th450x1de"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://sprites/icon.svg"
 InventoryManager="*res://scenes/inventory_manager.tscn"
 LootGenerator="*res://scenes/loot_generator.tscn"
 LootDropManager="*res://scenes/loot_drop_manager.tscn"
+SettingsManager="*res://scenes/settings_manager.tscn"
 
 [input]
 
