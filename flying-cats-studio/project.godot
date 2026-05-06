@@ -22,6 +22,10 @@ LootGenerator="*res://scenes/loot_generator.tscn"
 LootDropManager="*res://scenes/loot_drop_manager.tscn"
 SettingsManager="*res://scenes/settings_manager.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 move_left={
