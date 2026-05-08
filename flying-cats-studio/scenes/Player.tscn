@@ -138,7 +138,7 @@ libraries = {
 shape = SubResource("CapsuleShape2D_3li8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 2
