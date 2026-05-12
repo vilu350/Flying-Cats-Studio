@@ -13,7 +13,7 @@ func roll_item() -> ItemData:
 	for w in item_weights.values():
 		total += w
 		
-	var roll := randi_range(1, total)
+	var roll := randi_range(0, total - 1)
 	var sum := 0
 	
 	for item in item_weights.keys():

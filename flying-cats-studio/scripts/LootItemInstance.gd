@@ -7,7 +7,7 @@ class_name LootItemInstance
 @export var prefixes: Array[AffixData] = []
 @export var suffixes: Array[AffixData] = []
 
-var rolled_status: Dictionary = {}
+var rolled_stats: Dictionary = {}
 
 const RARITY_COLORS := {
 	LootEnums.Rarity.COMMON: Color.WHITE,
