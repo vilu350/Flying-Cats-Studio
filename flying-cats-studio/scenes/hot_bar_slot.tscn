@@ -1,18 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://dp5ko8ut64a41"]
 
-[ext_resource type="Script" uid="uid://dhyd4ngjg4iuk" path="res://scripts/hot_bar.gd" id="1_ccppf"]
+[ext_resource type="Script" uid="uid://dhyd4ngjg4iuk" path="res://scripts/hot_bar_slot.gd" id="1_ccppf"]
 
 [node name="HotBar_Slot" type="Panel"]
-custom_minimum_size = Vector2(20, 20)
-offset_right = 20.0
-offset_bottom = 20.0
+z_index = -1
+custom_minimum_size = Vector2(80, 80)
+offset_right = 160.0
+offset_bottom = 160.0
 script = ExtResource("1_ccppf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 160.0
+offset_bottom = 160.0
 
 [node name="Amount" type="Label" parent="."]
 layout_mode = 1
@@ -21,8 +22,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -7.0
+offset_left = -24.0
+offset_top = -9.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 4

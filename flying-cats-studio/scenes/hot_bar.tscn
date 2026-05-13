@@ -1,9 +1,51 @@
-[gd_scene format=3 uid="uid://cdi1xrs8pu4fg"]
+[gd_scene load_steps=4 format=3 uid="uid://cdi1xrs8pu4fg"]
 
-[node name="HotBar" type="Control"]
+[ext_resource type="Script" uid="uid://ctu5vn2vs84le" path="res://scripts/hot_bar_area.gd" id="1_kib42"]
+[ext_resource type="Script" uid="uid://ck7ums2aidh0n" path="res://scripts/hot_bar.gd" id="1_lofj5"]
+[ext_resource type="PackedScene" uid="uid://dp5ko8ut64a41" path="res://scenes/hot_bar_slot.tscn" id="1_xkonb"]
+
+[node name="HotBar" type="Control" node_paths=PackedStringArray("hotbar")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_lofj5")
+hotbar = NodePath("UI/HotBar_Area")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HotBar_Area" type="HBoxContainer" parent="UI"]
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -104.0
+offset_right = 44.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_kib42")
+
+[node name="HotBar_Slot" parent="UI/HotBar_Area" instance=ExtResource("1_xkonb")]
+layout_mode = 2
+amount = 1
+
+[node name="HotBar_Slot2" parent="UI/HotBar_Area" instance=ExtResource("1_xkonb")]
+layout_mode = 2
+
+[node name="HotBar_Slot3" parent="UI/HotBar_Area" instance=ExtResource("1_xkonb")]
+layout_mode = 2
+
+[node name="HotBar_Slot4" parent="UI/HotBar_Area" instance=ExtResource("1_xkonb")]
+layout_mode = 2
+
+[node name="HotBar_Slot5" parent="UI/HotBar_Area" instance=ExtResource("1_xkonb")]
+layout_mode = 2
+
+[node name="HotBar_Slot6" parent="UI/HotBar_Area" instance=ExtResource("1_xkonb")]
+layout_mode = 2
+
+[connection signal="equip" from="UI/HotBar_Area" to="." method="_on_hotbar_equip"]
