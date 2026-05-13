@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp5ko8ut64a41"]
+
+[ext_resource type="Script" uid="uid://dhyd4ngjg4iuk" path="res://scripts/hot_bar.gd" id="1_ccppf"]
+
+[node name="HotBar_Slot" type="Panel"]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_ccppf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Amount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 4
+text = "45"
+horizontal_alignment = 2
+vertical_alignment = 2
