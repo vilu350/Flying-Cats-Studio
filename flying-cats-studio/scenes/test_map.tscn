@@ -20,7 +20,7 @@ position = Vector2(-6236, 1405)
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true
-position = Vector2(-5970, 812)
+position = Vector2(107, 1915)
 
 [node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
 unique_name_in_owner = true
