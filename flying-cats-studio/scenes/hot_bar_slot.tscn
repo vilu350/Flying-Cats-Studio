@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp5ko8ut64a41"]
+[gd_scene load_steps=3 format=3 uid="uid://dp5ko8ut64a41"]
 
 [ext_resource type="Script" uid="uid://dhyd4ngjg4iuk" path="res://scripts/hot_bar_slot.gd" id="1_ccppf"]
+[ext_resource type="Resource" uid="uid://b1t4vvxfkswx5" path="res://HotBarStuff/Sword.tres" id="2_sc43u"]
 
 [node name="HotBar_Slot" type="Panel"]
 z_index = -1
@@ -8,6 +9,8 @@ custom_minimum_size = Vector2(80, 80)
 offset_right = 160.0
 offset_bottom = 160.0
 script = ExtResource("1_ccppf")
+item = ExtResource("2_sc43u")
+amount = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(80, 80)
@@ -26,7 +29,7 @@ offset_left = -24.0
 offset_top = -9.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 26
 text = "45"
 horizontal_alignment = 2
 vertical_alignment = 2

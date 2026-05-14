@@ -21,6 +21,7 @@ InventoryManager="*res://scenes/inventory_manager.tscn"
 LootGenerator="*res://scenes/loot_generator.tscn"
 LootDropManager="*res://scenes/loot_drop_manager.tscn"
 SettingsManager="*res://scenes/settings_manager.tscn"
+HotBar="*res://scenes/hot_bar.tscn"
 
 [display]
 

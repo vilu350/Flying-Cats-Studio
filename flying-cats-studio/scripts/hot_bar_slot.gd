@@ -10,6 +10,20 @@ extends Panel
 			return
 			
 		$Icon.texture = value.icon
+			
+		#if item.has_method("some_method"):
+			#print("Item has method")
+			
+		var parent = get_parent()
+			
+		if parent != null and parent.has_method("update"):
+			parent.update()
+		
+		if value == null:
+			$Icon.texture = null
+			$Amount.text = ""
+			return
+			
 		
 @export var amount : int = 0:
 	set(value):
@@ -37,6 +51,11 @@ func _drop_data(_at_position, data):
 	temp = amount
 	amount = data.amount
 	data.amount = temp
+	
+	if get_parent().has_method("update"):
+		get_parent().update()
+	if data.get_parent().has_method("update"):
+		data.get_parent().update()
 	
 func _get_drag_data(_at_position):
 	if item:
