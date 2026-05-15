@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=12 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jdy63yw6711" path="res://scenes/maze_map.tscn" id="4_u56q5"]
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
+[ext_resource type="Texture2D" uid="uid://6yb5evjt6enq" path="res://scenes/Space Background (Stars).png" id="11_4mr4y"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -92,3 +93,28 @@ offset_right = 363.0
 offset_bottom = 72.0
 value = 100.0
 player = NodePath("../../Player")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+texture_filter = 1
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(-3934, -1523)
+repeat_size = Vector2(1156, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-6264, 714.00006)
+scale = Vector2(4.6025014, 2.8399992)
+texture = ExtResource("11_4mr4y")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+texture_filter = 1
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1156, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+texture_filter = 1
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1156, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]

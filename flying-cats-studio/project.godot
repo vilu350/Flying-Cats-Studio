@@ -24,6 +24,7 @@ SettingsManager="*res://scenes/settings_manager.tscn"
 
 [display]
 
+window/size/mode=4
 window/stretch/mode="viewport"
 
 [input]
