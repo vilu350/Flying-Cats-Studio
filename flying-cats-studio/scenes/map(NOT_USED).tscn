@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jdy63yw6711" path="res://scenes/maze_map.tscn" id="1_4xfga"]
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="3_gldc4"]
 
-[node name="Map" type="Node2D"]
+[node name="Map (NOT USED)" type="Node2D"]
 
 [node name="Maze Map" parent="." instance=ExtResource("1_4xfga")]
 

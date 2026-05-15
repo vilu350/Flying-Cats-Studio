@@ -100,7 +100,7 @@ func spawn_slash():
 	pass
 	
 func hurtByEnemy(area):
-	currentHealth -= 10
+	currentHealth -= 35
 	if currentHealth < 0:
 		die()
 		
@@ -116,8 +116,7 @@ func hurtByEnemy(area):
 	isHurt = false
 		
 func die() -> void: 
-	if get_tree():
-		get_tree().reload_current_scene()
+	get_tree().reload_current_scene()
 	
 func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
