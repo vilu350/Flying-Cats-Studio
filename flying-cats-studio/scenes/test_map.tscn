@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=12 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jdy63yw6711" path="res://scenes/maze_map.tscn" id="4_u56q5"]
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
+[ext_resource type="AudioStream" uid="uid://bf6lwfiye11wp" path="res://assets-sound/otherside-128-ytshorts.savetube.me.mp3" id="11_4mr4y"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -92,3 +93,9 @@ offset_right = 363.0
 offset_bottom = 72.0
 value = 100.0
 player = NodePath("../../Player")
+
+[node name="MapMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4mr4y")
+volume_db = -12.881
+autoplay = true
+bus = &"Music"
