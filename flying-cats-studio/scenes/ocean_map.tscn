@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://cceu0fq64q88o"]
+[gd_scene load_steps=13 format=4 uid="uid://cceu0fq64q88o"]
 
 [ext_resource type="Texture2D" uid="uid://8wpcm3ccamre" path="res://sprites/Cave Tileset/tileset.png" id="1_r66pc"]
 [ext_resource type="Texture2D" uid="uid://cu4gisshkg6n7" path="res://sprites/Cave Tileset/vegetation.png" id="2_73y1e"]
 [ext_resource type="Texture2D" uid="uid://bkhmr4a0m0dh1" path="res://Space Background (4).png" id="3_iq8jh"]
 [ext_resource type="Texture2D" uid="uid://bca8mxhvs22mm" path="res://Space Background (5).png" id="4_kexjq"]
 [ext_resource type="Texture2D" uid="uid://6yb5evjt6enq" path="res://scenes/Space Background (Stars).png" id="5_3io3t"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="6_kexjq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73y1e"]
 texture = ExtResource("1_r66pc")
@@ -114,7 +115,7 @@ tile_map_data = PackedByteArray("AADk//L/AwADAAEAAADk//P/AwADAAEAAADk//T/AwADAAE
 tile_set = SubResource("TileSet_w1b3x")
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(10, 31)
+position = Vector2(231, -43)
 
 [node name="Parallax2D" type="Parallax2D" parent="Node2D"]
 scroll_scale = Vector2(0.2, 0.2)
@@ -163,3 +164,5 @@ shape = SubResource("RectangleShape2D_w1b3x")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5161, 398)
 shape = SubResource("RectangleShape2D_w1b3x")
+
+[node name="Player" parent="." instance=ExtResource("6_kexjq")]

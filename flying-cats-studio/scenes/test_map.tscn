@@ -17,8 +17,6 @@
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
 
-[node name="UI" parent="." instance=ExtResource("2_6gsqv")]
-
 [node name="OceanMap" parent="." instance=ExtResource("2_pw728")]
 position = Vector2(-6236, 1405)
 
@@ -129,3 +127,5 @@ repeat_size = Vector2(1152, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D4"]
 position = Vector2(-5970, 814)
 texture = ExtResource("11_4mr4y")
+
+[node name="UI" parent="." instance=ExtResource("2_6gsqv")]
