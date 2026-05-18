@@ -20,7 +20,7 @@ script = ExtResource("1_t8dge")
 position = Vector2(-6236, 1405)
 
 [node name="MazeMap" parent="." instance=ExtResource("4_u56q5")]
-position = Vector2(5166, -3452)
+position = Vector2(-5365, -3810)
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true
