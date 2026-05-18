@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=14 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
 [ext_resource type="Texture2D" uid="uid://6yb5evjt6enq" path="res://scenes/Space Background (Stars).png" id="11_4mr4y"]
+[ext_resource type="Texture2D" uid="uid://bkhmr4a0m0dh1" path="res://Space Background (4).png" id="11_6751p"]
+[ext_resource type="Texture2D" uid="uid://bca8mxhvs22mm" path="res://Space Background (5).png" id="12_o5gif"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -25,7 +27,7 @@ position = Vector2(5166, -3452)
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true
-position = Vector2(-5970, 814)
+position = Vector2(-6179, 1418)
 
 [node name="Enemy" parent="." instance=ExtResource("3_s02eq")]
 unique_name_in_owner = true
@@ -94,27 +96,36 @@ offset_bottom = 72.0
 value = 100.0
 player = NodePath("../../Player")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+position = Vector2(-5970, 814)
+
+[node name="Parallax2D3" type="Parallax2D" parent="Node2D"]
 texture_filter = 1
 scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-3934, -1523)
-repeat_size = Vector2(1156, 0)
+scroll_offset = Vector2(48, -33)
+repeat_size = Vector2(500, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(-6264, 714.00006)
-scale = Vector2(4.6025014, 2.8399992)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D3"]
+position = Vector2(452, 34)
+texture = ExtResource("11_6751p")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Node2D"]
+texture_filter = 1
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(-748, 76)
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D2"]
+position = Vector2(748, -75)
+texture = ExtResource("12_o5gif")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Node2D"]
+texture_filter = 1
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(-5807, 574)
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D4"]
+position = Vector2(-5970, 814)
 texture = ExtResource("11_4mr4y")
-
-[node name="Parallax2D2" type="Parallax2D" parent="."]
-texture_filter = 1
-scroll_scale = Vector2(0.3, 0.3)
-repeat_size = Vector2(1156, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
-
-[node name="Parallax2D3" type="Parallax2D" parent="."]
-texture_filter = 1
-scroll_scale = Vector2(0.3, 0.3)
-repeat_size = Vector2(1156, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
