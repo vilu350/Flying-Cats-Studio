@@ -17,6 +17,8 @@ signal healthChanged
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
+var is_talking = false
+
 var current_look_dir = "left"
 
 var can_slash: bool = true

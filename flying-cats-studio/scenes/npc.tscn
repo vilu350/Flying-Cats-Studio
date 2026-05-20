@@ -9,6 +9,8 @@
 size = Vector2(306.75, 286.5)
 
 [node name="npc" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_abqhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,7 +23,15 @@ shape = SubResource("RectangleShape2D_7n8xq")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="conversation" parent="CanvasLayer" instance=ExtResource("3_rv78h")]
-visible = false
+anchors_preset = -1
+anchor_top = 0.73800004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.22402954
+offset_right = 0.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 0
 word = Array[String](["HI!", "HUH!", "BOO!", "GUH!", "UH!"])
 _name = Array[String](["npc", "player", "npc", "player", "npc"])
 _icon = Array[Texture]([ExtResource("2_rv78h"), ExtResource("4_7n8xq"), ExtResource("2_rv78h"), ExtResource("4_7n8xq"), ExtResource("2_rv78h"), ExtResource("4_7n8xq")])

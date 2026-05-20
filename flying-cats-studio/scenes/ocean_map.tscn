@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cceu0fq64q88o"]
+[gd_scene load_steps=11 format=4 uid="uid://cceu0fq64q88o"]
 
 [ext_resource type="Texture2D" uid="uid://8wpcm3ccamre" path="res://sprites/Cave Tileset/tileset.png" id="1_r66pc"]
 [ext_resource type="Texture2D" uid="uid://cu4gisshkg6n7" path="res://sprites/Cave Tileset/vegetation.png" id="2_73y1e"]
+[ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="3_3ffdm"]
+[ext_resource type="PackedScene" uid="uid://ddnlpfi6hw4tx" path="res://scenes/npc.tscn" id="4_iq8jh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73y1e"]
 texture = ExtResource("1_r66pc")
@@ -137,3 +139,8 @@ shape = SubResource("RectangleShape2D_w1b3x")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5161, 398)
 shape = SubResource("RectangleShape2D_w1b3x")
+
+[node name="Player" parent="." instance=ExtResource("3_3ffdm")]
+
+[node name="npc" parent="." instance=ExtResource("4_iq8jh")]
+position = Vector2(739, -15)

@@ -41,7 +41,7 @@ offset_right = 218.0
 offset_bottom = 46.0
 text = "name"
 
-[node name="text" type="Label" parent="ColorRect"]
+[node name="word" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 181.0
 offset_top = 57.0
