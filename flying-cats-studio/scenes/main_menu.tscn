@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckm8th450x1de"]
+[gd_scene load_steps=8 format=3 uid="uid://ckm8th450x1de"]
 
 [ext_resource type="Script" uid="uid://rf24uu4w81fh" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://b8pd63a8dm83s" path="res://scripts/video.gd" id="1_l6cm7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://cp3t3gwqv0hss" path="res://main_menu.tres" id="2_rtw2f"]
 [ext_resource type="Script" uid="uid://c7lmsjtar7lsp" path="res://scripts/controls.gd" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://bfci0f2yap2jj" path="res://scripts/language.gd" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://dbnr6anjmpxqj" path="res://assets-sound/727803__metris__underwater-choir-soundscape.wav" id="7_oa1go"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("menu", "main_settings", "video_settings", "audio_settings", "control_settings", "language_settings", "back_button", "enter_button", "settings_button", "quit_button", "video_button", "audio_button", "controls_button", "language_button")]
 layout_mode = 3
@@ -31,6 +32,16 @@ audio_button = NodePath("Settings/Control2/Audio")
 controls_button = NodePath("Settings/Control3/Controls")
 language_button = NodePath("Settings/Control4/Language")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.050980393, 0.14117648, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="Menu" type="VBoxContainer" parent="."]
 visible = false
 custom_minimum_size = Vector2(100, 100)
@@ -44,6 +55,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.63127995, 0.65436, 0.8366534, 1)
+theme_override_font_sizes/font_size = 64
+text = "Under the Midnight Waves"
+horizontal_alignment = 1
+
 [node name="Control" type="Control" parent="Menu"]
 layout_mode = 2
 size_flags_horizontal = 5
@@ -51,14 +69,17 @@ size_flags_vertical = 7
 
 [node name="Enter" type="Button" parent="Menu/Control"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.24908648
+anchor_top = 0.13636364
+anchor_right = 0.7503045
+anchor_bottom = 1.1515151
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 15.5)
 theme = ExtResource("2_rtw2f")
 text = "Enter"
+metadata/_edit_use_anchors_ = true
 
 [node name="Control2" type="Control" parent="Menu"]
 layout_mode = 2
@@ -67,14 +88,19 @@ size_flags_vertical = 7
 
 [node name="Settings" type="Button" parent="Menu/Control2"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.25152254
+anchor_top = 0.14925373
+anchor_right = 0.75274056
+anchor_bottom = 1.1492537
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 15.5)
 theme = ExtResource("2_rtw2f")
 text = "Settings"
+metadata/_edit_use_anchors_ = true
 
 [node name="Control3" type="Control" parent="Menu"]
 layout_mode = 2
@@ -83,14 +109,19 @@ size_flags_vertical = 7
 
 [node name="Quit" type="Button" parent="Menu/Control3"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.25152254
+anchor_top = 0.17910448
+anchor_right = 0.75274056
+anchor_bottom = 1.1791044
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 15.5)
 theme = ExtResource("2_rtw2f")
 text = "Quit"
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="VBoxContainer" parent="."]
 visible = false
@@ -210,10 +241,10 @@ visible = false
 custom_minimum_size = Vector2(395, 350)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.32855904
-anchor_top = 0.22993827
-anchor_right = 0.67144096
-anchor_bottom = 0.77006173
+anchor_left = 0.24175347
+anchor_top = 0.14969136
+anchor_right = 0.75824654
+anchor_bottom = 0.9984568
 offset_left = 100.0
 offset_top = 100.0
 offset_right = -100.0
@@ -399,3 +430,8 @@ anchor_bottom = 0.9768519
 grow_vertical = 0
 text = "Back"
 metadata/_edit_use_anchors_ = true
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_oa1go")
+autoplay = true
+bus = &"Music"
