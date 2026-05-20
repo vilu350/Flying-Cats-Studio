@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=12 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jdy63yw6711" path="res://scenes/maze_map.tscn" id="4_u56q5"]
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
+[ext_resource type="PackedScene" uid="uid://blfc45bvxpgde" path="res://scenes/portal.tscn" id="11_4mr4y"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -18,9 +19,11 @@ script = ExtResource("1_t8dge")
 
 [node name="OceanMap" parent="." instance=ExtResource("2_pw728")]
 position = Vector2(-6236, 1405)
+metadata/_edit_lock_ = true
 
 [node name="MazeMap" parent="." instance=ExtResource("4_u56q5")]
 position = Vector2(-5365, -3810)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true
@@ -72,7 +75,7 @@ position = Vector2(2163, 710)
 position = Vector2(-1786, -66)
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource("5_bdpbv")]
-position = Vector2(-10996, -495)
+position = Vector2(-10173, -523)
 
 [node name="Collectable3" parent="Collectables" instance=ExtResource("5_bdpbv")]
 position = Vector2(-5205, 2906)
@@ -92,3 +95,18 @@ offset_right = 363.0
 offset_bottom = 72.0
 value = 100.0
 player = NodePath("../../Player")
+
+[node name="Portal" parent="." instance=ExtResource("11_4mr4y")]
+position = Vector2(-10996, -428)
+
+[node name="Destination" parent="Portal" index="1"]
+position = Vector2(5631, -3382)
+
+[node name="Portal2" parent="." instance=ExtResource("11_4mr4y")]
+position = Vector2(-6963, -5514)
+
+[node name="Destination" parent="Portal2" index="1"]
+position = Vector2(-4033, 5017)
+
+[editable path="Portal"]
+[editable path="Portal2"]

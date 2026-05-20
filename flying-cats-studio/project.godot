@@ -26,6 +26,10 @@ SettingsManager="*res://scenes/settings_manager.tscn"
 
 window/stretch/mode="viewport"
 
+[global_group]
+
+Player=""
+
 [input]
 
 move_left={

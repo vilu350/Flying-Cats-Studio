@@ -118,7 +118,7 @@ height = 27.0
 radius = 7.0
 height = 29.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ij6vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
