@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://b57cndykbena8"]
+
+[ext_resource type="Script" uid="uid://bx204y0t2026l" path="res://scripts/conversation.gd" id="1_t0f7h"]
+
+[node name="Conversation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0f7h")
+
+[node name="board" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="frame" type="ColorRect" parent="board"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="board/frame"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="name" type="Label" parent="board"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="word" type="Label" parent="board"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="dots" type="Label" parent="board"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnxl4iipj57xs"]
+
+[ext_resource type="Script" uid="uid://cu0c0k88m7cum" path="res://scripts/dialogue_manager.gd" id="1_jbixp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_516v5"]
+font_size = 32
+
+[node name="DialogueManager" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_jbixp")
+
+[node name="DialogueBox" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="DialogueText" type="Label" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is the dialogue text
+"
+label_settings = SubResource("LabelSettings_516v5")
+autowrap_mode = 3
