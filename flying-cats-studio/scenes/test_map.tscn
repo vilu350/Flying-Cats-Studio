@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=13 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
 [ext_resource type="PackedScene" uid="uid://blfc45bvxpgde" path="res://scenes/portal.tscn" id="11_4mr4y"]
+[ext_resource type="AudioStream" uid="uid://cdsgxqt03rrs6" path="res://assets-sound/592086__soundflakes__soundflakes-horizon-of-the-unknown.mp3" id="12_36mki"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -107,6 +108,11 @@ position = Vector2(-6963, -5514)
 
 [node name="Destination" parent="Portal2" index="1"]
 position = Vector2(-4033, 5017)
+
+[node name="MapBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_36mki")
+volume_db = 10.018
+autoplay = true
 
 [editable path="Portal"]
 [editable path="Portal2"]
