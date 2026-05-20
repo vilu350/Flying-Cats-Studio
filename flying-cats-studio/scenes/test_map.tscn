@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jdy63yw6711" path="res://scenes/maze_map.tscn" id="4_u56q5"]
 [ext_resource type="PackedScene" uid="uid://c3mu8pnvukvue" path="res://scenes/collectable.tscn" id="5_bdpbv"]
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
-[ext_resource type="AudioStream" uid="uid://bf6lwfiye11wp" path="res://assets-sound/otherside-128-ytshorts.savetube.me.mp3" id="11_4mr4y"]
+[ext_resource type="AudioStream" uid="uid://cdsgxqt03rrs6" path="res://assets-sound/592086__soundflakes__soundflakes-horizon-of-the-unknown.mp3" id="11_4mr4y"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -96,6 +96,6 @@ player = NodePath("../../Player")
 
 [node name="MapMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_4mr4y")
-volume_db = -12.881
+volume_db = 13.835
 autoplay = true
 bus = &"Music"
