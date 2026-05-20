@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57cndykbena8"]
+
+[ext_resource type="Script" uid="uid://bx204y0t2026l" path="res://scripts/conversation.gd" id="1_fxcju"]
+[ext_resource type="Texture2D" uid="uid://bc8hnbppkun01" path="res://scenes/Blue player.png" id="2_o4mgf"]
+
+[node name="conversation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fxcju")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 170.0
+color = Color(0, 0.1580452, 0.15839782, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 23.0
+offset_right = 158.0
+offset_bottom = 146.0
+color = Color(0.14049366, 0.1404632, 0.23000401, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -1.0
+offset_right = 130.0
+offset_bottom = 131.0
+texture = ExtResource("2_o4mgf")
+expand_mode = 1
+
+[node name="name" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 23.0
+offset_right = 218.0
+offset_bottom = 46.0
+text = "name"
+
+[node name="text" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 57.0
+offset_right = 1126.0
+offset_bottom = 128.0
+
+[node name="continue" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 135.0
+offset_right = 1139.0
+offset_bottom = 162.0
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
