@@ -13,6 +13,7 @@ signal healthChanged
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
 @onready var sword: Sprite2D = $Sprite2D/Sword
+@onready var sword_swing: AnimationPlayer = %SwordSwing
 
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
@@ -92,8 +93,8 @@ func _physics_process(delta: float) -> void:
 		
 	
 	if Input.is_action_pressed("attack") and can_slash:
-		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("slash").length / slash_time
-		$Sprite2D/Sword/AnimationPlayer.play("slash")
+		%SwordSwing.speed_scale = %SwordSwing.get_animation("slash").length / slash_time
+		%SwordSwing.play("slash")
 		can_slash = false
 	
 func spawn_slash():
@@ -126,7 +127,7 @@ func knockback(enemyVelocity: Vector2):
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "slash":
-		$Sprite2D/Sword/AnimationPlayer.speed_scale = $Sprite2D/Sword/AnimationPlayer.get_animation("sword_return").length / sword_return_time
-		$Sprite2D/Sword/AnimationPlayer.play("sword_return")
+		%SwordSwing.speed_scale = %SwordSwing.get_animation("sword_return").length / sword_return_time
+		%SwordSwing.play("sword_return")
 	else:
 		can_slash = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e73jjgx2dwph"
-path="res://.godot/imported/Player Standing.png-f0c296247b21de3ec083c10999e645bb.ctex"
+uid="uid://2ctsghqvxe0k"
+path="res://.godot/imported/white player .png-e9c276ef81a9385ecd23d6996dd319e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Player Standing.png"
-dest_files=["res://.godot/imported/Player Standing.png-f0c296247b21de3ec083c10999e645bb.ctex"]
+source_file="res://sprites/white player .png"
+dest_files=["res://.godot/imported/white player .png-e9c276ef81a9385ecd23d6996dd319e7.ctex"]
 
 [params]
 

@@ -1,8 +1,15 @@
 [gd_scene load_steps=10 format=3 uid="uid://c3t26ejgfvyr1"]
 
 [ext_resource type="Script" uid="uid://cagenrx6eaxoj" path="res://scripts/player.gd" id="1_ij6vw"]
-[ext_resource type="Texture2D" uid="uid://e73jjgx2dwph" path="res://scenes/Player Standing.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://4hnepa438kxg" path="res://sprites/blue player.png" id="2_3li8b"]
 [ext_resource type="PackedScene" uid="uid://c3nnv308fvv7f" path="res://scenes/Sword.tscn" id="3_3li8b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
+radius = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdl7e"]
+radius = 7.0
+height = 32.0
 
 [sub_resource type="Animation" id="Animation_70d11"]
 length = 0.001
@@ -110,29 +117,12 @@ _data = {
 &"sword_return": SubResource("Animation_mdl7e")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
-radius = 6.0
-height = 27.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdl7e"]
-radius = 7.0
-height = 29.0
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ij6vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qhqgy")
-
-[node name="Sword" parent="Sprite2D" instance=ExtResource("3_3li8b")]
-texture_filter = 1
-position = Vector2(-6, 6)
-rotation = -1.288053
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/Sword"]
-libraries = {
-&"": SubResource("AnimationLibrary_cw2d6")
-}
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_3li8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3li8b")
@@ -153,4 +143,15 @@ debug_color = Color(0.82007533, 0.39627144, 0.20714733, 0.41960785)
 
 [node name="Effects" type="Node2D" parent="."]
 
-[connection signal="animation_finished" from="Sprite2D/Sword/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="Sword" parent="." instance=ExtResource("3_3li8b")]
+texture_filter = 1
+position = Vector2(-6, 6)
+rotation = -1.288053
+
+[node name="SwordSwing" type="AnimationPlayer" parent="Sword"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_cw2d6")
+}
+
+[connection signal="animation_finished" from="Sword/SwordSwing" to="." method="_on_animation_player_animation_finished"]
