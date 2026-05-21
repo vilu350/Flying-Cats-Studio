@@ -2,3 +2,6 @@ extends Node2D
 
 @onready var player: CharacterBody2D = %Player
 @onready var enemy: CharacterBody2D = %Enemy
+
+func spawn_slash():
+	pass

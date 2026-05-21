@@ -12,7 +12,8 @@ signal healthChanged
 @export var deceleration := 1100.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hurt_timer: Timer = $HurtTimer
-@onready var sword: Sprite2D = $Sprite2D/Sword
+#@onready var sword: Sprite2D = $Sprite2D/Sword
+@onready var sword: Sprite2D = $Sword
 @onready var sword_swing: AnimationPlayer = %SwordSwing
 
 @export var maxHealth = 100
@@ -30,6 +31,8 @@ var can_slash: bool = true
 var lastAnimDirection: String = "Down"
 var isHurt: bool = false
 var isAttacking: bool = false
+
+var is_talking = false
 
 func _ready():
 	#effects.play("RESET")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3mubng0v8qua"]
+[gd_scene load_steps=14 format=3 uid="uid://3mubng0v8qua"]
 
 [ext_resource type="PackedScene" uid="uid://c3t26ejgfvyr1" path="res://scenes/Player.tscn" id="1_4wuf8"]
 [ext_resource type="Script" uid="uid://blri83oejwai4" path="res://scripts/test_map.gd" id="1_t8dge"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ebsba5fj3t6" path="res://scenes/Health_Bar.tscn" id="6_ss0f2"]
 [ext_resource type="PackedScene" uid="uid://blfc45bvxpgde" path="res://scenes/portal.tscn" id="11_4mr4y"]
 [ext_resource type="AudioStream" uid="uid://cdsgxqt03rrs6" path="res://assets-sound/592086__soundflakes__soundflakes-horizon-of-the-unknown.mp3" id="12_36mki"]
+[ext_resource type="PackedScene" uid="uid://ddnlpfi6hw4tx" path="res://scenes/npc.tscn" id="13_6751p"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_t8dge")
@@ -25,6 +26,9 @@ metadata/_edit_lock_ = true
 [node name="MazeMap" parent="." instance=ExtResource("4_u56q5")]
 position = Vector2(-5365, -3810)
 metadata/_edit_lock_ = true
+
+[node name="Npc" parent="." instance=ExtResource("13_6751p")]
+position = Vector2(-5004, 1116)
 
 [node name="Player" parent="." instance=ExtResource("1_4wuf8")]
 unique_name_in_owner = true

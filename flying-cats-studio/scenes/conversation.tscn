@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b57cndykbena8"]
+[gd_scene load_steps=6 format=3 uid="uid://b57cndykbena8"]
 
 [ext_resource type="Script" uid="uid://bx204y0t2026l" path="res://scripts/conversation.gd" id="1_t0f7h"]
+[ext_resource type="Texture2D" uid="uid://4hnepa438kxg" path="res://sprites/blue player.png" id="2_fxcju"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxcju"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4mgf"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_jcdsd"]
+font_size = 30
 
 [node name="Conversation" type="Control"]
 layout_mode = 3
@@ -12,31 +22,55 @@ grow_vertical = 2
 script = ExtResource("1_t0f7h")
 
 [node name="board" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.5)
 
 [node name="frame" type="ColorRect" parent="board"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 27.0
+offset_top = 17.0
+offset_right = 129.0
+offset_bottom = 187.0
+color = Color(4.4520945e-07, 0.21084219, 0.2128166, 1)
 
 [node name="TextureRect" type="TextureRect" parent="board/frame"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_right = 94.0
+offset_bottom = 170.0
+texture = ExtResource("2_fxcju")
+expand_mode = 1
 
 [node name="name" type="Label" parent="board"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 140.0
+offset_top = 22.0
+offset_right = 180.0
+offset_bottom = 45.0
+text = "name"
+label_settings = SubResource("LabelSettings_fxcju")
 
 [node name="word" type="Label" parent="board"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 147.0
+offset_top = 56.0
+offset_right = 1118.0
+offset_bottom = 137.0
+text = "words"
+label_settings = SubResource("LabelSettings_o4mgf")
 
 [node name="dots" type="Label" parent="board"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1101.0
+offset_top = 150.0
+offset_right = 1145.0
+offset_bottom = 192.0
+text = "...."
+label_settings = SubResource("LabelSettings_jcdsd")
