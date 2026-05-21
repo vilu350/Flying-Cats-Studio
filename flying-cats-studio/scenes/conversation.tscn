@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b57cndykbena8"]
 
 [ext_resource type="Script" uid="uid://bx204y0t2026l" path="res://scripts/conversation.gd" id="1_t0f7h"]
-[ext_resource type="Texture2D" uid="uid://4hnepa438kxg" path="res://sprites/blue player.png" id="2_fxcju"]
+[ext_resource type="Texture2D" uid="uid://bc8hnbppkun01" path="res://scenes/Blue player.png" id="2_fxcju"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fxcju"]
 font_size = 26
@@ -36,15 +36,21 @@ color = Color(0, 0, 0, 0.5)
 layout_mode = 0
 offset_left = 27.0
 offset_top = 17.0
-offset_right = 129.0
+offset_right = 113.0
 offset_bottom = 187.0
 color = Color(4.4520945e-07, 0.21084219, 0.2128166, 1)
 
 [node name="TextureRect" type="TextureRect" parent="board/frame"]
-layout_mode = 0
-offset_left = 8.0
-offset_right = 94.0
-offset_bottom = 170.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = 1.0
+offset_right = 36.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_fxcju")
 expand_mode = 1
 

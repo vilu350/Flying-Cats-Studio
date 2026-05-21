@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddnlpfi6hw4tx"]
+[gd_scene load_steps=5 format=3 uid="uid://ddnlpfi6hw4tx"]
 
 [ext_resource type="Script" uid="uid://hkpg1b3a0yff" path="res://scripts/npc.gd" id="1_rv78h"]
 [ext_resource type="Texture2D" uid="uid://bc8hnbppkun01" path="res://scenes/Blue player.png" id="2_7n8xq"]
 [ext_resource type="PackedScene" uid="uid://b57cndykbena8" path="res://scenes/conversation.tscn" id="3_4wlns"]
-[ext_resource type="Texture2D" uid="uid://4hnepa438kxg" path="res://sprites/blue player.png" id="4_7n8xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl2vt"]
 size = Vector2(94, 68)
@@ -23,8 +22,8 @@ shape = SubResource("RectangleShape2D_tl2vt")
 
 [node name="Conversation" parent="CanvasLayer" instance=ExtResource("3_4wlns")]
 word = Array[String](["HIIII", "WHAAA", "HUHHHH", "BRUHHH", "UHHHH"])
-_name = Array[String](["VI", "JI", "VI", "JI", "VI"])
-_icon = Array[Texture]([ExtResource("2_7n8xq"), ExtResource("4_7n8xq"), ExtResource("2_7n8xq"), ExtResource("4_7n8xq"), ExtResource("2_7n8xq")])
+_name = Array[String](["VI", "VI", "VI", "VI", "VI"])
+_icon = Array[Texture]([ExtResource("2_7n8xq"), ExtResource("2_7n8xq"), ExtResource("2_7n8xq"), ExtResource("2_7n8xq"), ExtResource("2_7n8xq")])
 
 [node name="note" type="ColorRect" parent="CanvasLayer"]
 visible = false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c3t26ejgfvyr1"]
 
 [ext_resource type="Script" uid="uid://cagenrx6eaxoj" path="res://scripts/player.gd" id="1_ij6vw"]
-[ext_resource type="Texture2D" uid="uid://4hnepa438kxg" path="res://sprites/blue player.png" id="2_3li8b"]
+[ext_resource type="Texture2D" uid="uid://btyb1sfypftnu" path="res://sprites/black player.png" id="2_3li8b"]
 [ext_resource type="PackedScene" uid="uid://c3nnv308fvv7f" path="res://scenes/Sword.tscn" id="3_3li8b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
