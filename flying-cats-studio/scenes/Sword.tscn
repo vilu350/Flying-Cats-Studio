@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3nnv308fvv7f"]
 
 [ext_resource type="Texture2D" uid="uid://cgp5inhsrsg46" path="res://sprites/Weapons Asset 16x16/Weapons Asset 16x16/002.png" id="1_rb3f2"]
-[ext_resource type="Script" uid="uid://b06na2eywhrch" path="res://scenes/sword.gd" id="2_sh16x"]
+[ext_resource type="Script" uid="uid://b06na2eywhrch" path="res://scripts/sword.gd" id="2_sh16x"]
 
 [node name="Sword" type="Sprite2D"]
 texture = ExtResource("1_rb3f2")

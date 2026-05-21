@@ -308,7 +308,7 @@ text = "SFX"
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 
-[node name="Controls" type="VBoxContainer" parent="." node_paths=PackedStringArray("up_button", "left_button", "down_button", "right_button")]
+[node name="Controls" type="VBoxContainer" parent="." node_paths=PackedStringArray("up_button", "left_button", "down_button", "right_button", "inventory_button", "interact_button")]
 visible = false
 custom_minimum_size = Vector2(350, 375)
 layout_mode = 1
@@ -328,6 +328,8 @@ up_button = NodePath("HBoxContainer/Up")
 left_button = NodePath("HBoxContainer2/Left")
 down_button = NodePath("HBoxContainer4/Down")
 right_button = NodePath("HBoxContainer3/Right")
+inventory_button = NodePath("HBoxContainer5/Inventory")
+interact_button = NodePath("HBoxContainer6/Interact")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Controls"]
@@ -382,6 +384,30 @@ text = "Right"
 [node name="Right" type="Button" parent="Controls/HBoxContainer3"]
 layout_mode = 2
 text = "D"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Controls"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="Controls/HBoxContainer5"]
+layout_mode = 2
+text = "Inventory"
+
+[node name="Inventory" type="Button" parent="Controls/HBoxContainer5"]
+layout_mode = 2
+text = "E"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Controls"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="Controls/HBoxContainer6"]
+layout_mode = 2
+text = "Interact"
+
+[node name="Interact" type="Button" parent="Controls/HBoxContainer6"]
+layout_mode = 2
+text = "F"
 
 [node name="Language" type="VBoxContainer" parent="." node_paths=PackedStringArray("language_option")]
 visible = false

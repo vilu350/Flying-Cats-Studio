@@ -4,6 +4,8 @@ extends VBoxContainer
 @export var left_button: Button
 @export var down_button: Button
 @export var right_button: Button
+@export var inventory_button: Button
+@export var interact_button: Button
 #@export var return_button: Button
 
 const ACTIONS = {
@@ -11,6 +13,8 @@ const ACTIONS = {
 	"left": "move_left",
 	"down": "move_down",
 	"right": "move_right",
+	"inventory": "inventory",
+	"interact": "enteract",
 	#"return": "return_to_menu",
 }
 	
@@ -23,6 +27,8 @@ func _ready():
 	left_button.pressed.connect(_on_rebind_button_pressed.bind("left"))
 	down_button.pressed.connect(_on_rebind_button_pressed.bind("down"))
 	right_button.pressed.connect(_on_rebind_button_pressed.bind("right"))
+	inventory_button.pressed.connect(_on_rebind_button_pressed.bind("inventory"))
+	interact_button.pressed.connect(_on_rebind_button_pressed.bind("interact"))
 	#return_button.pressed.connect(_on_rebind_button_pressed.bind("return"))
 
 func _get_button(direction: String) -> Button:
@@ -31,6 +37,8 @@ func _get_button(direction: String) -> Button:
 		"left": return left_button
 		"down": return down_button
 		"right": return right_button
+		"inventory": return inventory_button
+		"interact": return interact_button
 		#"return": return return_button
 		_: return null
 		
